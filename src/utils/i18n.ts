@@ -87,18 +87,18 @@ export function importAllLocales(): LocaleMessages<VueMessageType> {
         const viewsRequireContext: __WebpackModuleApi.RequireContext = require.context('../views', true, /[/\\]locales[/\\]([a-z]{2})-?([A-Z]{2})?\.ts$/); 
         viewsRequireContext.keys().forEach(fileName => {
             // 获取内容
-            const modulesConent = viewsRequireContext(fileName);
-            if(modulesConent.default) {               
+            const modulesContent = viewsRequireContext(fileName);
+            if(modulesContent.default) {
                 // 获取 PascalCase 命名
                 const modulesName = fileName.replace(/(.*\/)*([^.]+).*/ig,"$2");
                 
                 if(modules[modulesName]) {
                     modules[modulesName] = {
                         ...modules[modulesName],
-                        ...modulesConent.default
+                        ...modulesContent.default
                     }
                 } else {
-                    modules[modulesName] = modulesConent.default; 
+                    modules[modulesName] = modulesContent.default;
                 }
 
             }
@@ -109,18 +109,18 @@ export function importAllLocales(): LocaleMessages<VueMessageType> {
         const layoutsRequireContext: __WebpackModuleApi.RequireContext = require.context('../layouts', true, /[/\\]locales[/\\]([a-z]{2})-?([A-Z]{2})?\.ts$/); 
         layoutsRequireContext.keys().forEach(fileName => {
             // 获取内容
-            const modulesConent = layoutsRequireContext(fileName);
-            if(modulesConent.default) {               
+            const modulesContent = layoutsRequireContext(fileName);
+            if(modulesContent.default) {
                 // 获取 PascalCase 命名
                 const modulesName = fileName.replace(/(.*\/)*([^.]+).*/ig,"$2");
                 
                 if(modules[modulesName]) {
                     modules[modulesName] = {
                         ...modules[modulesName],
-                        ...modulesConent.default
+                        ...modulesContent.default
                     }
                 } else {
-                    modules[modulesName] = modulesConent.default; 
+                    modules[modulesName] = modulesContent.default;
                 }
 
             }
@@ -131,18 +131,18 @@ export function importAllLocales(): LocaleMessages<VueMessageType> {
         const componentsRequireContext: __WebpackModuleApi.RequireContext = require.context('../components', true, /[/\\]locales[/\\]([a-z]{2})-?([A-Z]{2})?\.ts$/); 
         componentsRequireContext.keys().forEach(fileName => {
             // 获取内容
-            const modulesConent = componentsRequireContext(fileName);
-            if(modulesConent.default) {               
+            const modulesContent = componentsRequireContext(fileName);
+            if(modulesContent.default) {
                 // 获取 PascalCase 命名
                 const modulesName = fileName.replace(/(.*\/)*([^.]+).*/ig,"$2");
                 
                 if(modules[modulesName]) {
                     modules[modulesName] = {
                         ...modules[modulesName],
-                        ...modulesConent.default
+                        ...modulesContent.default
                     }
                 } else {
-                    modules[modulesName] = modulesConent.default; 
+                    modules[modulesName] = modulesContent.default;
                 }
 
             }
@@ -153,17 +153,17 @@ export function importAllLocales(): LocaleMessages<VueMessageType> {
         const localesRequireContext: __WebpackModuleApi.RequireContext = require.context('../locales', false, /([a-z]{2})-?([A-Z]{2})?\.ts$/); 
         localesRequireContext.keys().forEach(fileName => {
             // 获取内容
-            const modulesConent = localesRequireContext(fileName);
-            if(modulesConent.default) {               
+            const modulesContent = localesRequireContext(fileName);
+            if(modulesContent.default) {
                 // 获取 PascalCase 命名
                 const modulesName = fileName.replace(/(.*\/)*([^.]+).*/ig,"$2");
                 if(modules[modulesName]) {
                     modules[modulesName] = {
                         ...modules[modulesName],
-                        ...modulesConent.default
+                        ...modulesContent.default
                     }
                 } else {
-                    modules[modulesName] = modulesConent.default; 
+                    modules[modulesName] = modulesContent.default;
                 }
 
             }

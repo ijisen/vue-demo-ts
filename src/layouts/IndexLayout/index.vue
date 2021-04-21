@@ -11,7 +11,7 @@
 
         <div
           id="index-layout-right"
-          :class="{'fiexd-header': headFixed}"
+          :class="{'fixed-header': headFixed}"
         >
 
             <right-top
@@ -153,7 +153,7 @@ export default defineComponent({
   flex: 1;
   overflow: auto;
   background-color: $mainBgColor;
-  &.fiexd-header {
+  &.fixed-header {
     display: flex;
     flex-direction: column;
     .index-layout-right-main {

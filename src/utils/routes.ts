@@ -3,7 +3,7 @@
  * @author LiQingSong
  */
 import { Component } from 'vue';
-import { RouteLocation, RouteLocationRaw} from 'vue-router';
+import { RouteLocation, RouteLocationRaw } from 'vue-router';
 import { isExternal } from './validate';
 
 /**
@@ -15,6 +15,7 @@ export interface BreadcrumbType {
   // 路由地址或外链
   path: string;
 }
+
 interface RoutesDataItemCore {
   // 菜单中是否隐藏
   hidden?: boolean;
@@ -49,18 +50,21 @@ interface RoutesDataItemCore {
    */
   belongTopMenu?: string;
 }
+
 interface RoutesDataItemComponent extends RoutesDataItemCore {
   // 跳转地址
   redirect?: RouteLocationRaw | ((to: RouteLocation) => RouteLocationRaw);
   // 组件页面
   component: Component | Promise<Component>;
 }
-interface RoutesDataItemRedirect extends RoutesDataItemCore{
+
+interface RoutesDataItemRedirect extends RoutesDataItemCore {
   // 跳转地址
   redirect: RouteLocationRaw | ((to: RouteLocation) => RouteLocationRaw);
   // 组件页面
   component?: Component | Promise<Component>;
 }
+
 export type RoutesDataItem = RoutesDataItemComponent | RoutesDataItemRedirect;
 
 /**
@@ -69,7 +73,7 @@ export type RoutesDataItem = RoutesDataItemComponent | RoutesDataItemRedirect;
  * @param routesData routes
  */
 export const getRouteItem = (pathname: string, routesData: RoutesDataItem[]): RoutesDataItem => {
-  let item: RoutesDataItem = { title: '', path: '', redirect: '', roles: [] };
+  let item: RoutesDataItem = {title: '', path: '', redirect: '', roles: []};
   for (let index = 0, len = routesData.length; index < len; index += 1) {
     const element = routesData[index];
     if (element.path === pathname) {
@@ -94,15 +98,11 @@ export const getRouteItem = (pathname: string, routesData: RoutesDataItem[]): Ro
  */
 export const hasChildRoute = (children: RoutesDataItem[]): boolean => {
   const showChildren = children.filter(item => {
-    if (item.hidden) {
-      return false;
-    }
-    return true;
+    return !item.hidden;
+
   });
-  if (showChildren.length > 0) {
-    return true;
-  }
-  return false;
+  return showChildren.length > 0;
+
 };
 
 /**
@@ -136,8 +136,8 @@ export const setRoutePathForParent = (pathname: string, parentPath = '/', headSt
   }
 
   return pathname.substr(0, headStart.length) === headStart
-    ? pathname
-    : `${parentPath}/${pathname}`;
+      ? pathname
+      : `${parentPath}/${pathname}`;
 };
 
 /**
@@ -145,7 +145,7 @@ export const setRoutePathForParent = (pathname: string, parentPath = '/', headSt
  * @param pathname path[]
  * @param routesData routes
  */
-export const getPathsTheRoutes = ( pathname: string[], routesData: RoutesDataItem[]): RoutesDataItem[] => {
+export const getPathsTheRoutes = (pathname: string[], routesData: RoutesDataItem[]): RoutesDataItem[] => {
   const routeItem: RoutesDataItem[] = [];
 
   for (let index = 0, len = pathname.length; index < len; index += 1) {
@@ -205,11 +205,11 @@ export const getRouteBelongTopMenu = (route: RoutesDataItem): string => {
  */
 export const vueRoutes = (routesData: RoutesDataItem[], parentPath = '/', headStart = '/'): RoutesDataItem[] => {
   return routesData.map(item => {
-    const { children, ...other } = item;
+    const {children, ...other} = item;
     const itemChildren = children || [];
-    const newItem: RoutesDataItem = { ...other };
+    const newItem: RoutesDataItem = {...other};
     newItem.path = setRoutePathForParent(newItem.path, parentPath, headStart);
-    
+
     if (item.children) {
       newItem.children = [
         ...vueRoutes(itemChildren, newItem.path, headStart),
@@ -219,7 +219,6 @@ export const vueRoutes = (routesData: RoutesDataItem[], parentPath = '/', headSt
     return newItem;
   });
 };
-
 
 
 /**
@@ -232,15 +231,15 @@ export const hasPermissionRouteRoles = (userRoles: string[], roles?: string | st
     return true;
   }
 
-  if(typeof roles === 'undefined') {
+  if (typeof roles === 'undefined') {
     return true;
   }
 
   if (typeof roles === 'string') {
     return userRoles.includes(roles);
-  } 
+  }
 
-  if(roles instanceof Array && roles.length > 0) {
+  if (roles instanceof Array && roles.length > 0) {
     return roles.some(role => userRoles.includes(role));
   }
 
@@ -270,7 +269,7 @@ export const hasPermission = (roles: string[], route: RoutesDataItem): boolean =
  * @param roles 用户的权限
  * @param routes 框架对应路由
  */
-export const getPermissionMenuData = ( roles: string[], routes: RoutesDataItem[]): RoutesDataItem[] => {
+export const getPermissionMenuData = (roles: string[], routes: RoutesDataItem[]): RoutesDataItem[] => {
   const menu: RoutesDataItem[] = [];
   for (let index = 0, len = routes.length; index < len; index += 1) {
     const element = {...routes[index]};

@@ -57,30 +57,30 @@ const StoreModel: ModuleType = {
     }
   },
   actions: {
-    async fetchCurrent({ commit }) {
+    async fetchCurrent({commit}) {
       try {
         const response: ResponseData = await queryCurrent();
-        const { data } = response;
+        const {data} = response;
         commit('saveCurrentUser', data || {});
         return true;
       } catch (error) {
         return false;
       }
     },
-    async fetchMessage({ commit }) {
+    async fetchMessage({commit}) {
       try {
         const response: ResponseData = await queryMessage();
-        const { data } = response;        
+        const {data} = response;
         commit('saveMessage', data || 0);
         return true;
       } catch (error) {
         return false;
       }
     },
-    async logout({ commit }) {
+    async logout({commit}) {
       try {
         await removeToken();
-        commit('saveCurrentUser', { ...initState.currentUser });
+        commit('saveCurrentUser', {...initState.currentUser});
         return true;
       } catch (error) {
         return false;
@@ -88,7 +88,6 @@ const StoreModel: ModuleType = {
     }
   }
 }
-
 
 
 export default StoreModel;

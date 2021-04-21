@@ -1,4 +1,3 @@
-
 import { Mutation/* , Action */ } from 'vuex';
 import { StoreModuleType } from "@/utils/store";
 import settings from '@/config/settings';
@@ -19,8 +18,7 @@ export interface ModuleType extends StoreModuleType<StateType> {
     setTopNavEnable: Mutation<StateType>;
     setHeadFixed: Mutation<StateType>;
   };
-  actions: {
-  };
+  actions: {};
 }
 
 const initState: StateType = {
@@ -48,7 +46,6 @@ const StoreModel: ModuleType = {
   },
   actions: {}
 }
-
 
 
 export default StoreModel;
