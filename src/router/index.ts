@@ -2,8 +2,8 @@
  * 路由入口
  * @author jisen
  */
-import {createRouter, createWebHashHistory} from 'vue-router';
-import {RoutesDataItem} from "@/utils/routes";
+import { createRouter, createWebHashHistory } from 'vue-router';
+import { RoutesDataItem } from "@/utils/routes";
 
 import SecurityLayout from '@/layouts/SecurityLayout.vue';
 import UserLayout from '@/layouts/UserLayout/index.vue';
@@ -253,7 +253,7 @@ const index: Array<RoutesDataItem> = [
 
 const router = createRouter({
   scrollBehavior(/* to, from, savedPosition */) {
-    return {top: 0}
+    return { top: 0 }
   },
   history: createWebHashHistory(process.env.BASE_URL),
   routes: index as any,
