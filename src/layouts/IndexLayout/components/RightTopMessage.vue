@@ -1,8 +1,8 @@
 <template>
-    <router-link to="/" class="indexlayout-top-message">
+    <router-link to="/" class="index-layout-top-message">
       <i class="el-icon-bell" :style="{ fontSize: '16px' }"></i>
       <el-badge
-        class="indexlayout-top-message-badge"
+        class="index-layout-top-message-badge"
         :value="message"
         type="danger"
       />
@@ -39,13 +39,13 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 @import '../../../assets/css/global.scss';
-.indexlayout-top-message {
+.index-layout-top-message {
     height: $headerHeight;
     line-height: $headerHeight;
     /* display: inline-block; */
     display: inline;
     color: #c0c4cc;
-    .indexlayout-top-message-badge {
+    .index-layout-top-message-badge {
         margin-left: -5px;
         margin-top: -20px;
         ::v-deep(.el-badge__content) {

@@ -10,7 +10,7 @@
   import { computed, defineComponent, ref } from 'vue';
   import { useRoute } from 'vue-router';
   import { getRouteItem, RoutesDataItem, vueRoutes } from '@/utils/routes';
-  import UserLayoutRoutes from './routes';
+  import { UserLayoutRoutes } from '@/router';
   import SelectLang from '@/components/SelectLang/index.vue';
   import useTitle from '@/composables/useTitle';
 

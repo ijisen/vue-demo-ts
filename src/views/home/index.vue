@@ -1,5 +1,5 @@
 <template>
-  <div class="indexlayout-main-conent">
+  <div class="index-layout-main-content">
     <el-row :gutter="24">
       <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6">
         <ArticleChartCard />

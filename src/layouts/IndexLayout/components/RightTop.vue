@@ -1,7 +1,7 @@
 <template>
-    <div id="indexlayout-right-top" :class="{'topNavEnable': !topNavEnable }">
-        <div class="indexlayout-right-top-top">
-            <div class="indexlayout-flexible" 
+    <div id="index-layout-right-top" :class="{'topNavEnable': !topNavEnable }">
+        <div class="index-layout-right-top-top">
+            <div class="index-layout-flexible"
               @click="() => {
                 if(toggleCollapsed) {
                   toggleCollapsed();
@@ -11,7 +11,7 @@
                <i class="el-icon-s-unfold" v-if="collapsed"></i>
                <i class="el-icon-s-fold" v-else></i>
             </div>
-            <div class="indexlayout-top-menu">
+            <div class="index-layout-top-menu">
                 <div ref="topMenuCon" :style="{width: topMenuWidth}">
                     <template v-if="topNavEnable">
                       <template v-for="(item, key) in menuData">
@@ -20,7 +20,7 @@
                           v-if="!item.hidden"
                           :to="item.path"
                           :class="{'active': belongTopMenu === item.path }"
-                          class="indexlayout-top-menu-li"
+                          class="index-layout-top-menu-li"
                         >
                         {{t(item.title)}}
                         </a-link>
@@ -29,18 +29,18 @@
                     <bread-crumbs v-else class="breadcrumb" :list="breadCrumbs"></bread-crumbs>
                 </div>
             </div>
-            <div class="indexlayout-top-menu-right">
+            <div class="index-layout-top-menu-right">
 
                 <right-top-message />
 
                 <right-top-user />
 
-                <select-lang class="indexlayout-top-selectlang" />
+                <select-lang class="index-layout-top-selectlang" />
 
             </div>
         </div>
-        <div v-if="topNavEnable" class="indexlayout-right-top-bot">
-            <div class="indexlayout-right-top-bot-home">
+        <div v-if="topNavEnable" class="index-layout-right-top-bot">
+            <div class="index-layout-right-top-bot-home">
               <i class="el-icon-s-home"></i>
             </div>
             <bread-crumbs class="breadcrumb" :list="breadCrumbs"></bread-crumbs>
@@ -118,18 +118,18 @@ export default defineComponent({
 </script>
 <style lang="scss">
 @import '../../../assets/css/global.scss';
-#indexlayout-right-top {
+#index-layout-right-top {
   width: 100%;
   height: ($headerHeight + $headerBreadcrumbHeight);
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   z-index: 9;
-  .indexlayout-right-top-top {
+  .index-layout-right-top-top {
     display: flex;
     width: 100%;
     height: $headerHeight;
     background-color: $menu-dark-bg;
     color: #c0c4cc;
-    .indexlayout-flexible {
+    .index-layout-flexible {
       width: $headerHeight;
       height: $headerHeight;
       line-height: $headerHeight;
@@ -141,14 +141,14 @@ export default defineComponent({
       }
     }
 
-    .indexlayout-top-menu {
+    .index-layout-top-menu {
       height: $headerHeight;
       line-height: $headerHeight;
       flex: 1;
       /* display: flex; */
       overflow: hidden;
       overflow-x: auto;
-      .indexlayout-top-menu-li {
+      .index-layout-top-menu-li {
         display: inline-block;
         padding: 0 15px;
         height: ($headerHeight - 3);
@@ -169,13 +169,13 @@ export default defineComponent({
       }
     }
 
-    .indexlayout-top-menu-right {
+    .index-layout-top-menu-right {
       width: 150px;
-      .indexlayout-top-usermenu {
+      .index-layout-top-usermenu {
         padding-left: 10px;
         color: #c0c4cc;
       }
-      .indexlayout-top-selectlang {
+      .index-layout-top-selectlang {
         padding-left: 10px;
         .dropDown {
           i {
@@ -189,12 +189,12 @@ export default defineComponent({
     @include scrollbar;
 
   }
-  .indexlayout-right-top-bot {
+  .index-layout-right-top-bot {
     display: flex;
     width: 100%;
     height: $headerBreadcrumbHeight;
     background-color: $mainBgColor;
-    .indexlayout-right-top-bot-home {
+    .index-layout-right-top-bot-home {
       width: $headerBreadcrumbHeight;
       height: $headerBreadcrumbHeight;
       line-height: $headerBreadcrumbHeight;
@@ -207,23 +207,23 @@ export default defineComponent({
   }
   &.topNavEnable {
     height: $headerHeight;
-    .indexlayout-right-top-top {
+    .index-layout-right-top-top {
       background-color: #ffffff;
       color: $--color-text-primary;
-      .indexlayout-flexible {
+      .index-layout-flexible {
         &:hover {
           background-color: $mainBgColor;
           color: $heading-color;
         }
       }
-      .indexlayout-top-menu-right {
-        .indexlayout-top-message {
+      .index-layout-top-menu-right {
+        .index-layout-top-message {
           color: $heading-color;
         }
-        .indexlayout-top-usermenu {
+        .index-layout-top-usermenu {
           color: $heading-color;
         }
-        .indexlayout-top-selectlang {
+        .index-layout-top-selectlang {
           .dropDown {
             i {
               color: $heading-color;

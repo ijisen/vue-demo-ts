@@ -1,7 +1,7 @@
 <template>
 
     <screen-table
-        class="indexlayout-main-conent"
+        class="index-layout-main-content"
         row-key="id"
         :data="list"
         :loading="loading"

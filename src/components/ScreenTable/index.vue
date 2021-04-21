@@ -1,12 +1,12 @@
 <template>
-  <div class="main-conent-screen">
+  <div class="main-content-screen">
 
     <div v-if="$slots.header" class="screen-header">
       <slot name="header"></slot>
     </div>
     <div v-else class="screen-padding" />
 
-    <div class="screen-conent" ref="conentRef">
+    <div class="screen-content" ref="conentRef">
       <el-table
           :height="tableHeight"
           :row-key="rowKey"
@@ -118,7 +118,7 @@
   });
 </script>
 <style lang="scss" scoped>
-  .main-conent-screen {
+  .main-content-screen {
     display: flex;
     flex-direction: column;
     height: calc(100% - 48px - 50px);
@@ -136,7 +136,7 @@
       text-align: right;
     }
 
-    .screen-conent {
+    .screen-content {
       flex: 1;
       padding: 0 20px;
       overflow: hidden;

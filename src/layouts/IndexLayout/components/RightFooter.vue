@@ -1,5 +1,5 @@
 <template>
-    <div class="indexlayout-right-footer">
+    <div class="index-layout-right-footer">
       <div class="footer-links">
         <a
           href="http://tsv2-demo.admin-element-vue.liqingsong.cc"
@@ -34,7 +34,7 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
-.indexlayout-right-footer {
+.index-layout-right-footer {
   height: 50px;
   overflow: hidden;
   text-align: center;

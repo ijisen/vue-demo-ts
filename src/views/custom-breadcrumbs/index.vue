@@ -1,5 +1,5 @@
 <template>
-  <div class="indexlayout-main-conent">
+  <div class="index-layout-main-content">
     <el-card shadow="never" class="cus-card">
       <i class="el-icon-top" :style="{fontSize: '35px', color: '#FF0000'}"></i>
       {{ t('page.custom-breadcrumbs.msg') }}

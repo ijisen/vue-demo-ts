@@ -11,6 +11,7 @@ import ElementPlus from 'element-plus';
 
 // 导入 svg
 import { importAllSvg } from '@/components/IconSvg';
+
 importAllSvg();
 
 import App from '@/App.vue';

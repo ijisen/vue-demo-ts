@@ -1,5 +1,5 @@
 <template>
-    <div class="indexlayout-main-conent">
+    <div class="index-layout-main-content">
         <el-card shadow="never" class="cus-card">
             <template #header>
                 Editor:

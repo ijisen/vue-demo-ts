@@ -1,5 +1,5 @@
 <template>
-    <div class="indexlayout-footer-toolbar" :class="{narrow: collapsed }">
+    <div class="index-layout-footer-toolbar" :class="{narrow: collapsed }">
         <slot></slot>
     </div>
 </template>
@@ -28,7 +28,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 @import '../../../assets/css/global.scss';
-.indexlayout-footer-toolbar {
+.index-layout-footer-toolbar {
   position: fixed;
   padding: 0 24px;
   left: $leftSideBarWidth;

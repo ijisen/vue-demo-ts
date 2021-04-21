@@ -1,25 +1,25 @@
 <template>
-  <div class="indexlayout-main-conent" v-loading="loading">
+  <div class="index-layout-main-content" v-loading="loading">
 
     <el-card shadow="never" class="cus-card" style="margin-bottom: 20px">
       <template #header>退款申请</template>
 
       <el-row :gutter="24">
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">取货单号</span>
-          <span class="main-conent-detail-content">{{ refundApplication.ladingNo }}</span>
+          <span class="main-content-detail-label">取货单号</span>
+          <span class="main-content-detail-content">{{ refundApplication.ladingNo }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">状态</span>
-          <span class="main-conent-detail-content">{{ refundApplication.state }}</span>
+          <span class="main-content-detail-label">状态</span>
+          <span class="main-content-detail-content">{{ refundApplication.state }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">销售单号</span>
-          <span class="main-conent-detail-content">{{ refundApplication.saleNo }}</span>
+          <span class="main-content-detail-label">销售单号</span>
+          <span class="main-content-detail-content">{{ refundApplication.saleNo }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">子订单</span>
-          <span class="main-conent-detail-content"> {{ refundApplication.childOrders }}</span>
+          <span class="main-content-detail-label">子订单</span>
+          <span class="main-content-detail-content"> {{ refundApplication.childOrders }}</span>
         </el-col>
 
       </el-row>
@@ -31,24 +31,24 @@
 
       <el-row :gutter="24">
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">用户姓名</span>
-          <span class="main-conent-detail-content">{{ userInfo.name }}</span>
+          <span class="main-content-detail-label">用户姓名</span>
+          <span class="main-content-detail-content">{{ userInfo.name }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">联系电话</span>
-          <span class="main-conent-detail-content">{{ userInfo.tel }}</span>
+          <span class="main-content-detail-label">联系电话</span>
+          <span class="main-content-detail-content">{{ userInfo.tel }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">常用快递</span>
-          <span class="main-conent-detail-content">{{ userInfo.courier }}</span>
+          <span class="main-content-detail-label">常用快递</span>
+          <span class="main-content-detail-content">{{ userInfo.courier }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">取货地址</span>
-          <span class="main-conent-detail-content"> {{ userInfo.address }}</span>
+          <span class="main-content-detail-label">取货地址</span>
+          <span class="main-content-detail-content"> {{ userInfo.address }}</span>
         </el-col>
         <el-col :sm="24" :md="12" :lg="8">
-          <span class="main-conent-detail-lable">备注</span>
-          <span class="main-conent-detail-content"> {{ userInfo.remark }}</span>
+          <span class="main-content-detail-label">备注</span>
+          <span class="main-content-detail-content"> {{ userInfo.remark }}</span>
         </el-col>
 
       </el-row>
@@ -244,8 +244,8 @@
   });
 </script>
 <style lang="scss" scoped>
-  .main-conent-detail-lable,
-  .main-conent-detail-content {
+  .main-content-detail-label,
+  .main-content-detail-content {
     display: table-cell;
     padding-bottom: 16px;
     line-height: 20px;
@@ -253,11 +253,11 @@
 
   }
 
-  .main-conent-detail-lable {
+  .main-content-detail-label {
     white-space: nowrap;
   }
 
-  .main-conent-detail-content {
+  .main-content-detail-content {
     width: 100%;
     word-wrap: break-word;
     word-break: break-all;

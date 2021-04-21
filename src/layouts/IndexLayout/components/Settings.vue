@@ -18,7 +18,7 @@
         <i class="el-icon-setting" :style="{ fontSize: '20px', color: '#fcfcfc' }"></i>
     </div>
     <el-drawer
-        custom-class="indexlayout-settings"
+        custom-class="index-layout-settings"
         title="系统布局配置"
         v-model="visible"
         @close="close"
@@ -104,7 +104,7 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-.indexlayout-settings{
+.index-layout-settings{
     .el-drawer__body {
         padding: 24px;
     }
