@@ -5,7 +5,8 @@ import 'normalize.css';
 
 // 全局样式
 import '@/assets/css/global.scss';
-import './assets/iconfont/iconfont.css';
+import '@/assets/iconfont/iconfont.css';
+import '@/assets/css/custom/index.scss'
 
 // 引入 ElementUI
 import ElementPlus from 'element-plus';

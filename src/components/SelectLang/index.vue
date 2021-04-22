@@ -1,7 +1,7 @@
 <template>
   <el-dropdown @command="changeLang">
         <span class="dropDown">
-            <i class="el-icon-football"></i>
+            <i class="iconfont icon-language"></i>
         </span>
     <template #dropdown>
       <el-dropdown-menu class="menu">
@@ -63,9 +63,10 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import '../../assets/css/global.scss';
+@import '../../assets/css/element-variables.scss';
 
 .dropDown {
+  color: #fff;
   cursor: pointer;
 }
 

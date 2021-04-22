@@ -29,20 +29,20 @@ export const UserLayoutRoutes: Array<RoutesDataItem> = [
 
 export const MenuList: Array<RoutesDataItem> = [
   {
-    icon: 'home',
+    icon: 'icon-home',
     title: 'menu.home',
     path: '/home',
     redirect: '/home/workplace',
     component: BlankLayout,
     children: [
       {
-        icon: 'file',
+        icon: 'icon-file',
         title: 'menu.home.workplace',
         path: 'workplace',
         component: () => import('@/views/home/index.vue')
       },
       {
-        icon: 'edit',
+        icon: 'icon-file',
         title: 'menu.home.demo',
         path: 'demo',
         component: () => import('@/views/demo/index.vue'),
@@ -66,14 +66,14 @@ export const MenuList: Array<RoutesDataItem> = [
   },
 
     {
-      icon: 'file',
+      icon: 'icon-file',
       title: 'menu.pages',
       path: '/sample',
       redirect: '/sample/list/table',
       component: BlankLayout,
       children: [
         {
-          icon: 'file',
+          icon: 'icon-file',
           title: 'menu.pages.list',
           path: 'list',
           redirect: '/sample/list/table',
@@ -105,7 +105,7 @@ export const MenuList: Array<RoutesDataItem> = [
           ],
         },
         {
-          icon: 'file',
+          icon: 'icon-file',
           title: 'menu.pages.form',
           path: 'form',
           redirect: '/sample/form/basic',
@@ -124,7 +124,7 @@ export const MenuList: Array<RoutesDataItem> = [
           ],
         },
         {
-          icon: 'file',
+          icon: 'icon-file',
           title: 'menu.pages.detail',
           path: 'detail',
           redirect: '/sample/detail/basic',
@@ -150,27 +150,27 @@ export const MenuList: Array<RoutesDataItem> = [
       ],
     },
     {
-      icon: 'file',
+      icon: 'icon-file',
       title: 'menu.roles',
       path: '/roles',
       redirect: '/roles/all',
       component: BlankLayout,
       children: [
         {
-          icon: 'file',
+          icon: 'icon-file',
           title: 'menu.roles.all',
           path: 'all',
           component: () => import('@/views/roles/all/index.vue'),
         },
         {
-          icon: 'file',
+          icon: 'icon-file',
           roles: ['user'],
           title: 'menu.roles.user',
           path: 'user',
           component: () => import('@/views/roles/user/index.vue'),
         },
         {
-          icon: 'file',
+          icon: 'icon-file',
           roles: ['test'],
           title: 'menu.roles.test',
           path: 'test',
