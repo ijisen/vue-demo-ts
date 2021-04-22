@@ -41,20 +41,20 @@ export const MenuList: Array<RoutesDataItem> = [
       },
       {
         icon: 'edit',
-        title: 'index-layout.menu.home.custom-breadcrumbs',
-        path: 'custombreadcrumbs',
-        component: () => import('@/views/custom-breadcrumbs/index.vue'),
+        title: 'index-layout.menu.home.demo',
+        path: 'demo',
+        component: () => import('@/views/demo/index.vue'),
         breadcrumb: [
           {
-            title: 'index-layout.menu.home.custom-breadcrumbs',
-            path: '/home/custombreadcrumbs',
+            title: 'index-layout.menu.home.demo',
+            path: '/home/demo',
           },
           {
             title: 'index-layout.menu.home',
             path: '/home',
           },
           {
-            title: 'index-layout.menu.home.custom-breadcrumbs.liqingsong.cc',
+            title: 'index-layout.menu.home.demo.liqingsong.cc',
             path: 'http://liqingsong.cc',
           },
         ],
