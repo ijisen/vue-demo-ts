@@ -1,6 +1,5 @@
 /**
  * 站点配置
- * @author LiQingSong
  */
 export interface SettingsType {
     /**

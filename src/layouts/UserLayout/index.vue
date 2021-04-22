@@ -1,12 +1,18 @@
 <template>
   <div class="user-layout">
     <div class="lang">
-      <SelectLang/>
+      <SelectLang />
     </div>
     <router-view></router-view>
   </div>
 </template>
 <script lang="ts">
+  /**
+   ==============================================================
+   * Theme Name: UserLayout：抽离出用于登录注册页面的通用布局
+   * Author: jisen
+   * Edit Time: 2021-04-22
+   ============================================================== */
   import { computed, defineComponent, ref } from 'vue';
   import { useRoute } from 'vue-router';
   import { getRouteItem, RoutesDataItem, vueRoutes } from '@/utils/routes';
@@ -63,7 +69,5 @@
       }
 
     }
-
-
   }
 </style>

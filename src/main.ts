@@ -5,14 +5,10 @@ import 'normalize.css';
 
 // 全局样式
 import '@/assets/css/global.scss';
+import './assets/iconfont/iconfont.css';
 
 // 引入 ElementUI
 import ElementPlus from 'element-plus';
-
-// 导入 svg
-import { importAllSvg } from '@/components/IconSvg';
-
-importAllSvg();
 
 import App from '@/App.vue';
 import router from '@/router';

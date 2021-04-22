@@ -7,10 +7,10 @@
         <template #dropdown>
             <el-dropdown-menu>
                 <el-dropdown-item command="userinfo">
-                    {{t('index-layout.topmenu.userinfo')}}
+                    {{t('topMenu.userinfo')}}
                 </el-dropdown-item>
                 <el-dropdown-item command="logout">
-                   {{t('index-layout.topmenu.logout')}}
+                   {{t('topMenu.logout')}}
                 </el-dropdown-item>
             </el-dropdown-menu>
         </template>

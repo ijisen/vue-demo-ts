@@ -1,5 +1,33 @@
 export default {
+  'topMenu.userinfo': '个人信息',
+  'topMenu.logout': '退出',
+
   'menu.home': '首页',
+  'menu.home.workplace': '工作台',
+  'menu.home.demo': '模板',
+  'menu.home.docs': '使用文档',
+
+
+  'menu.pages': '页面示例',
+  'menu.pages.list': '列表页面',
+  'menu.pages.list.basic': '标准列表',
+  'menu.pages.list.table': '表格列表',
+  'menu.pages.list.highly-adaptive-table': '高度自适应表格',
+  'menu.pages.list.search': '搜索列表',
+  'menu.pages.list.search.table': '查询表格',
+  'menu.pages.form': '表单页面',
+  'menu.pages.form.basic': '基础表单',
+  'menu.pages.form.complex': '高级表单',
+  'menu.pages.detail': '详情页面',
+  'menu.pages.detail.basic': '基础详情',
+  'menu.pages.detail.module': '模块详情',
+  'menu.pages.detail.table': '表格详情',
+
+  'menu.roles': '权限验证',
+  'menu.roles.all': '用户都有权限',
+  'menu.roles.user': 'Users有权限',
+  'menu.roles.test': 'Tests有权限',
+  
   'menu.welcome': '欢迎',
 
   'menu.dataSourceGroup': '数据源',

@@ -1,0 +1,212 @@
+{
+  "id": "2504173",
+  "name": "dpp-v3",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2451112",
+      "name": "盾牌 (1)",
+      "font_class": "dunpai",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "551267",
+      "name": "财务",
+      "font_class": "caiwu",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "7586723",
+      "name": "User settings",
+      "font_class": "user-manage",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "11998477",
+      "name": "user set",
+      "font_class": "user-set",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "12184878",
+      "name": "数据",
+      "font_class": "shuju2",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "2237177",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e73e",
+      "unicode_decimal": 59198
+    },
+    {
+      "icon_id": "6263311",
+      "name": "域名白名单",
+      "font_class": "yumingbaimingdan",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "11372698",
+      "name": "失败",
+      "font_class": "shibai",
+      "unicode": "e8bb",
+      "unicode_decimal": 59579
+    },
+    {
+      "icon_id": "12175517",
+      "name": "编辑",
+      "font_class": "bianji1",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "12184864",
+      "name": "筛选",
+      "font_class": "shaixuan1",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "12184865",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "12184866",
+      "name": "链接",
+      "font_class": "lianjie",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "12184877",
+      "name": "图片",
+      "font_class": "tupian1",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "12184893",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "12184902",
+      "name": "编辑",
+      "font_class": "bianji2",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "12225048",
+      "name": "gather",
+      "font_class": "gather",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "12225054",
+      "name": "menu1",
+      "font_class": "menu",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "12225164",
+      "name": "default",
+      "font_class": "default",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "12249445",
+      "name": "工作台",
+      "font_class": "gongzuotai",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "12250137",
+      "name": "产品管理",
+      "font_class": "chanpinguanli1",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "982782",
+      "name": "域名注册",
+      "font_class": "yumingzhuce",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "2461987",
+      "name": "域名配置",
+      "font_class": "yumingpeizhi",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "3071879",
+      "name": "批量转移域名",
+      "font_class": "piliangzhuanyiyuming-copy",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5413165",
+      "name": "域名备案",
+      "font_class": "yumingbeian",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "9603907",
+      "name": "域名",
+      "font_class": "yuming",
+      "unicode": "e807",
+      "unicode_decimal": 59399
+    },
+    {
+      "icon_id": "9946151",
+      "name": "域名解析",
+      "font_class": "yumingjiexi",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "4772989",
+      "name": "域名管理",
+      "font_class": "yumingguanli",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "8776843",
+      "name": "edit",
+      "font_class": "icon-test4",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "8777370",
+      "name": "list",
+      "font_class": "icon-test11",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    }
+  ]
+}

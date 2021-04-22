@@ -1,6 +1,6 @@
 <template>
     <div class="index-layout-right-footer">
-      <div class="footer-links">
+      <!--<div class="footer-links">
         <a
           href="http://tsv2-demo.admin-element-vue.liqingsong.cc"
           target="_blank"
@@ -8,21 +8,8 @@
         >
           DEMO
         </a>
-        <a
-          href="https://github.com/lqsong/admin-element-vue"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Github
-        </a>
-        <a href="http://liqingsong.cc" target="_blank" rel="noreferrer">
-          博客
-        </a>
-        <a href="http://www.wyxgn.com" target="_blank" rel="noreferrer">
-          网页小功能
-        </a>
-      </div>
-      <div>Copyright © 2020 LIQINGSONG.CC, All Rights Reserved</div>
+      </div>-->
+      <div>Copyright © 2020 ZDNS, All Rights Reserved</div>
     </div>
 </template>
 <script lang="ts">

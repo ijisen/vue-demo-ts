@@ -1,14 +1,13 @@
 {
-  "name": "admin-element-vue-typescript",
-  "description": "Vue3.x Element-UI Admin",
+  "name": "element-vue-typescript",
+  "description": "Vue3.x Element-UI TS",
   "version": "2.0.0",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "svgo": "svgo -f src/assets/iconsvg --config=src/assets/iconsvg/svgo.yml"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-decoupled-document": "^23.1.0",

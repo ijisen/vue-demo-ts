@@ -4,13 +4,15 @@
  */
 import { createRouter, createWebHashHistory } from 'vue-router';
 import { RoutesDataItem } from "@/utils/routes";
+import { defineAsyncComponent } from "vue";
 
-import SecurityLayout from '@/layouts/SecurityLayout.vue';
-import UserLayout from '@/layouts/UserLayout/index.vue';
-import BlankLayout from '@/layouts/BlankLayout.vue';
-import IndexLayout from '@/layouts/IndexLayout/index.vue';
+const SecurityLayout = () => import('@/layouts/SecurityLayout.vue');
 
-// import IndexLayoutRoutes from '@/layouts/IndexLayout/routes';
+const UserLayout = () => import('@/layouts/UserLayout/index.vue');
+
+const IndexLayout = () => import('@/layouts/IndexLayout/index.vue');
+
+const BlankLayout = () => import('@/layouts/BlankLayout.vue');
 
 export const UserLayoutRoutes: Array<RoutesDataItem> = [
   {
@@ -28,212 +30,158 @@ export const UserLayoutRoutes: Array<RoutesDataItem> = [
 export const MenuList: Array<RoutesDataItem> = [
   {
     icon: 'home',
-    title: 'index-layout.menu.home',
+    title: 'menu.home',
     path: '/home',
     redirect: '/home/workplace',
     component: BlankLayout,
     children: [
       {
-        icon: 'control',
-        title: 'index-layout.menu.home.workplace',
+        icon: 'file',
+        title: 'menu.home.workplace',
         path: 'workplace',
         component: () => import('@/views/home/index.vue')
       },
       {
         icon: 'edit',
-        title: 'index-layout.menu.home.demo',
+        title: 'menu.home.demo',
         path: 'demo',
         component: () => import('@/views/demo/index.vue'),
+        // 自定义面包屑
         breadcrumb: [
           {
-            title: 'index-layout.menu.home.demo',
+            title: 'menu.home.demo',
             path: '/home/demo',
           },
           {
-            title: 'index-layout.menu.home',
+            title: 'menu.home',
             path: '/home',
           },
           {
-            title: 'index-layout.menu.home.demo.liqingsong.cc',
+            title: 'menu.home.demo',
             path: 'http://liqingsong.cc',
           },
         ],
       },
-      {
-        icon: 'detail',
-        title: 'index-layout.menu.home.docs',
-        path: 'http://admin-element-vue.liqingsong.cc/',
-        belongTopMenu: '/home',
-        redirect: ''
-      },
     ],
   },
 
-  {
-    icon: 'components',
-    title: 'index-layout.menu.component',
-    path: '/component',
-    redirect: '/component/icon/svg',
-    component: BlankLayout,
-    children: [
-      {
-        icon: 'icon',
-        title: 'index-layout.menu.component.icon',
-        path: 'icon',
-        redirect: '/component/icon/svg',
-        component: BlankLayout,
-        children: [
-          {
-            title: 'index-layout.menu.component.icon.svg',
-            path: 'svg',
-            component: () => import('@/views/component/icon/svg/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.component.icon.font',
-            path: 'font',
-            component: () => import('@/views/component/icon/font/index.vue'),
-          },
-        ]
-      },
-      {
-        icon: 'editor',
-        title: 'index-layout.menu.component.editor',
-        path: 'editor',
-        redirect: '/component/editor/tuieditor',
-        component: BlankLayout,
-        children: [
-          {
-            title: 'index-layout.menu.component.editor.tui-editor',
-            path: 'tuieditor',
-            component: () => import('@/views/component/editor/tui-editor/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.component.editor.ckeditor',
-            path: 'ckeditor',
-            component: () => import('@/views/component/editor/ckeditor/index.vue'),
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    icon: 'page',
-    title: 'index-layout.menu.pages',
-    path: '/pagesample',
-    redirect: '/pagesample/list/table',
-    component: BlankLayout,
-    children: [
-      {
-        icon: 'list',
-        title: 'index-layout.menu.pages.list',
-        path: 'list',
-        redirect: '/pagesample/list/table',
-        component: BlankLayout,
-        children: [
-          {
-            title: 'index-layout.menu.pages.list.table',
-            path: 'table',
-            component: () => import('@/views/pagesample/list/table/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.pages.list.highly-adaptive-table',
-            path: 'highlyadaptivetable',
-            component: () => import('@/views/pagesample/list/highly-adaptive-table/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.pages.list.search',
-            path: 'search',
-            redirect: '/pagesample/list/search/table',
-            component: BlankLayout,
-            children: [
-              {
-                title: 'index-layout.menu.pages.list.search.table',
-                path: 'table',
-                component: () => import('@/views/pagesample/list/search/table/index.vue'),
-              }
-            ],
-          },
-        ],
-      },
-      {
-        icon: 'edit',
-        title: 'index-layout.menu.pages.form',
-        path: 'form',
-        redirect: '/pagesample/form/basic',
-        component: BlankLayout,
-        children: [
-          {
-            title: 'index-layout.menu.pages.form.basic',
-            path: 'basic',
-            component: () => import('@/views/pagesample/form/basic/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.pages.form.complex',
-            path: 'complex',
-            component: () => import('@/views/pagesample/form/complex/index.vue'),
-          },
-        ],
-      },
-      {
-        icon: 'detail',
-        title: 'index-layout.menu.pages.detail',
-        path: 'detail',
-        redirect: '/pagesample/detail/basic',
-        component: BlankLayout,
-        children: [
-          {
-            title: 'index-layout.menu.pages.detail.basic',
-            path: 'basic',
-            component: () => import('@/views/pagesample/detail/basic/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.pages.detail.module',
-            path: 'module',
-            component: () => import('@/views/pagesample/detail/module/index.vue'),
-          },
-          {
-            title: 'index-layout.menu.pages.detail.table',
-            path: 'table',
-            component: () => import('@/views/pagesample/detail/table/index.vue'),
-          },
-        ],
-      },
-    ],
-  },
-  {
-    icon: 'permissions',
-    title: 'index-layout.menu.roles',
-    path: '/roles',
-    redirect: '/roles/all',
-    component: BlankLayout,
-    children: [
-      {
-        icon: 'detail',
-        title: 'index-layout.menu.roles.all',
-        path: 'all',
-        component: () => import('@/views/roles/all/index.vue'),
-      },
-      {
-        icon: 'detail',
-        roles: ['user'],
-        title: 'index-layout.menu.roles.user',
-        path: 'user',
-        component: () => import('@/views/roles/user/index.vue'),
-      },
-      {
-        icon: 'detail',
-        roles: ['test'],
-        title: 'index-layout.menu.roles.test',
-        path: 'test',
-        component: () => import('@/views/roles/test/index.vue'),
-      },
-    ],
-  },
+    {
+      icon: 'file',
+      title: 'menu.pages',
+      path: '/sample',
+      redirect: '/sample/list/table',
+      component: BlankLayout,
+      children: [
+        {
+          icon: 'file',
+          title: 'menu.pages.list',
+          path: 'list',
+          redirect: '/sample/list/table',
+          component: BlankLayout,
+          children: [
+            {
+              title: 'menu.pages.list.table',
+              path: 'table',
+              component: () => import('@/views/sample/list/table/index.vue'),
+            },
+            {
+              title: 'menu.pages.list.highly-adaptive-table',
+              path: 'highlyadaptivetable',
+              component: () => import('@/views/sample/list/highly-adaptive-table/index.vue'),
+            },
+            {
+              title: 'menu.pages.list.search',
+              path: 'search',
+              redirect: '/sample/list/search/table',
+              component: BlankLayout,
+              children: [
+                {
+                  title: 'menu.pages.list.search.table',
+                  path: 'table',
+                  component: () => import('@/views/sample/list/search/table/index.vue'),
+                }
+              ],
+            },
+          ],
+        },
+        {
+          icon: 'file',
+          title: 'menu.pages.form',
+          path: 'form',
+          redirect: '/sample/form/basic',
+          component: BlankLayout,
+          children: [
+            {
+              title: 'menu.pages.form.basic',
+              path: 'basic',
+              component: () => import('@/views/sample/form/basic/index.vue'),
+            },
+            {
+              title: 'menu.pages.form.complex',
+              path: 'complex',
+              component: () => import('@/views/sample/form/complex/index.vue'),
+            },
+          ],
+        },
+        {
+          icon: 'file',
+          title: 'menu.pages.detail',
+          path: 'detail',
+          redirect: '/sample/detail/basic',
+          component: BlankLayout,
+          children: [
+            {
+              title: 'menu.pages.detail.basic',
+              path: 'basic',
+              component: () => import('@/views/sample/detail/basic/index.vue'),
+            },
+            {
+              title: 'menu.pages.detail.module',
+              path: 'module',
+              component: () => import('@/views/sample/detail/module/index.vue'),
+            },
+            {
+              title: 'menu.pages.detail.table',
+              path: 'table',
+              component: () => import('@/views/sample/detail/table/index.vue'),
+            },
+          ],
+        },
+      ],
+    },
+    {
+      icon: 'file',
+      title: 'menu.roles',
+      path: '/roles',
+      redirect: '/roles/all',
+      component: BlankLayout,
+      children: [
+        {
+          icon: 'file',
+          title: 'menu.roles.all',
+          path: 'all',
+          component: () => import('@/views/roles/all/index.vue'),
+        },
+        {
+          icon: 'file',
+          roles: ['user'],
+          title: 'menu.roles.user',
+          path: 'user',
+          component: () => import('@/views/roles/user/index.vue'),
+        },
+        {
+          icon: 'file',
+          roles: ['test'],
+          title: 'menu.roles.test',
+          path: 'test',
+          component: () => import('@/views/roles/test/index.vue'),
+        },
+      ],
+    },
 
 ];
 
-const index: Array<RoutesDataItem> = [
+const routes: Array<RoutesDataItem> = [
   {
     title: 'empty',
     path: '/',
@@ -258,7 +206,7 @@ const index: Array<RoutesDataItem> = [
   {
     title: 'app.global.menu.notfound',
     path: '/:pathMatch(.*)*',
-    component: () => import('@/views/404/index.vue'),
+    component: () => import('@/views/exception/404/index.vue'),
   }
 ]
 
@@ -267,7 +215,7 @@ const router = createRouter({
     return { top: 0 }
   },
   history: createWebHashHistory(process.env.BASE_URL),
-  routes: index as any,
+  routes: routes as any,
 });
 
 export default router;

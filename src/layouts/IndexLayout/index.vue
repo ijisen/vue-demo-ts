@@ -24,12 +24,12 @@
         <permission :roles="routeItem.roles">
           <router-view />
         </permission>
-        <RightFooter />
+        <!--<RightFooter />-->
       </div>
 
     </div>
 
-    <Settings />
+    <!--<Settings />-->
 
   </div>
 </template>
@@ -50,8 +50,8 @@
   import Permission from '@/components/Permission/index.vue';
   import Left from './components/Left.vue';
   import RightTop from './components/RightTop.vue';
-  import RightFooter from './components/RightFooter.vue';
-  import Settings from "./components/Settings.vue";
+  // import RightFooter from './components/RightFooter.vue';
+  // import Settings from "./components/Settings.vue";
 
   interface IndexLayoutSetupData {
     collapsed: boolean;
@@ -71,8 +71,8 @@
       Permission,
       Left,
       RightTop,
-      RightFooter,
-      Settings
+      // RightFooter,
+      // Settings
     },
     setup(): IndexLayoutSetupData {
       const store = useStore<{

@@ -1,12 +1,15 @@
 /**
- * 自定义 token 操作
- * @author LiQingSong
- */
+ * ==============================================================
+ * Theme Name:   自定义 token 操作
+ * Author:  jisen
+ * Edit Time: 2021-04-22
+ ============================================================== */
 import localforage from 'localforage';
 import settings from '@/config/settings';
 
 /**
  * 获取本地Token
+ * @return {String}
  */
 export const getToken = async (): Promise<string | null> => {
   return await localforage.getItem(settings.siteTokenKey);

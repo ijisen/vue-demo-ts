@@ -7,6 +7,15 @@
   </div>
 </template>
 <script lang="ts">
+  /**
+   * Theme Name: Demo 代码示例
+   * Author: jisen
+   * Description: A Mysitemyway Premium Wordpress Theme
+   * Edit Time: 2020-01-09
+   * @param {(Object|Array)} source
+   * @returns {Object}
+   * @returns {Array}
+   **/
   import { defineComponent } from 'vue';
   import { useI18n } from 'vue-i18n';
 

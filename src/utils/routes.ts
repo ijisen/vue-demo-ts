@@ -56,6 +56,7 @@ interface RoutesDataItemComponent extends RoutesDataItemCore {
   redirect?: RouteLocationRaw | ((to: RouteLocation) => RouteLocationRaw);
   // 组件页面
   component: Component | Promise<Component>;
+  // component?: never;
 }
 
 interface RoutesDataItemRedirect extends RoutesDataItemCore {
@@ -63,6 +64,7 @@ interface RoutesDataItemRedirect extends RoutesDataItemCore {
   redirect: RouteLocationRaw | ((to: RouteLocation) => RouteLocationRaw);
   // 组件页面
   component?: Component | Promise<Component>;
+  // component?: never;
 }
 
 export type RoutesDataItem = RoutesDataItemComponent | RoutesDataItemRedirect;
