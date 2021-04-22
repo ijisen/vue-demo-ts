@@ -46,7 +46,7 @@
   } from '@/utils/routes';
   import { mergeUnique as ArrayMergeUnique } from '@/utils/array';
   import useTitle from '@/composables/useTitle';
-  import IndexLayoutRoutes from './routes';
+  import { MenuList } from '@/router';
   import Permission from '@/components/Permission/index.vue';
   import Left from './components/Left.vue';
   import RightTop from './components/RightTop.vue';
@@ -83,7 +83,7 @@
 
 
       // 所有菜单路由
-      const menuData: RoutesDataItem[] = vueRoutes(IndexLayoutRoutes);
+      const menuData: RoutesDataItem[] = vueRoutes(MenuList);
 
       // 当前路由 item
       const routeItem = computed<RoutesDataItem>(() => getRouteItem(route.path, menuData));
