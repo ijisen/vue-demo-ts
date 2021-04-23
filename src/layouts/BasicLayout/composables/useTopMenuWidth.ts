@@ -1,5 +1,5 @@
 /**
- * 设置 IndexLayout TopMenuWidth
+ * 设置 BasicLayout TopMenuWidth
  * @author LiQingSong
  */
 import { ComputedRef, onMounted, Ref, ref, watch, nextTick } from 'vue';

@@ -1,39 +1,52 @@
 <template>
-    <el-breadcrumb>
-        <el-breadcrumb-item v-for="item in list" :key="item.path">
-            <a-link :to="item.path">{{t(item.title)}}</a-link>
-        </el-breadcrumb-item>
-    </el-breadcrumb>
+  <el-breadcrumb>
+    <el-breadcrumb-item v-for="item in list" :key="item.path">
+      <a-link :to="item.path">{{ t(item.title) }}</a-link>
+    </el-breadcrumb-item>
+  </el-breadcrumb>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { useI18n } from "vue-i18n";
-import { BreadcrumbType } from '@/utils/routes';
-import ALink from '@/components/ALink/index.vue';
+  import { defineComponent, PropType } from 'vue';
+  import { useI18n } from "vue-i18n";
+  import { BreadcrumbType } from '@/utils/routes';
+  import ALink from '@/components/ALink/index.vue';
 
-interface BreadCrumbsSetupData {
+  interface BreadCrumbsSetupData {
     t: Function;
-}
+  }
 
-export default defineComponent({
+  export default defineComponent({
     name: 'BreadCrumbs',
     props: {
-        list: {
-            type: Array as PropType<BreadcrumbType[]>,
-            default: () => {
-                return [];
-            }
+      list: {
+        type: Array as PropType<BreadcrumbType[]>,
+        default: () => {
+          return [];
         }
+      }
     },
     components: {
-        ALink
+      ALink
     },
     setup(): BreadCrumbsSetupData {
-        const { t } = useI18n();
+      const { t } = useI18n();
 
-        return {
-            t
-         }
+      return {
+        t
+      }
     }
-})
+  })
 </script>
+<style lang="scss">
+  .el-breadcrumb {
+    font-size: 12px !important;
+
+    .el-breadcrumb__inner {
+      color: #666;
+
+      a {
+        color: #666;
+      }
+    }
+  }
+</style>

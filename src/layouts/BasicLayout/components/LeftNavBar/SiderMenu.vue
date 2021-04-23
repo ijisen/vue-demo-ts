@@ -1,6 +1,6 @@
 <template>
   <el-menu
-      class="index-layout-left-menu"
+      class="custom-el-menu"
       :collapse="collapsed"
       :collapse-transition="false"
       :default-active="defaultActive"

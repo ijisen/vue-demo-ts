@@ -1,48 +1,54 @@
 @import './element-variables.scss';
-@import './variables.scss';
 @import './mixin.scss';
 @import './element-reset.scss';
 
+body {
+  background-color: #f0f2f5;
+}
+
 .flex-wrap-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 a {
-    color: #1890ff;
-    text-decoration: none;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    transition: color .3s;
-}
-a:active,
-a:hover {
-    text-decoration: none;
-    outline: 0;
-}
-a:active {
-    color: #096dd9;
-}
-a:hover {
-    color: #40a9ff;
+  color: #1890ff;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
 }
 
-.border-solid-transparent{
-    border: solid 1px transparent;
+a:active,
+a:hover {
+  text-decoration: none;
+  outline: 0;
+}
+
+a:active {
+  color: #096dd9;
+}
+
+a:hover {
+  color: #40a9ff;
+}
+
+.border-solid-transparent {
+  border: solid 1px transparent;
 }
 
 .text-align-right {
-    text-align: right;
+  text-align: right;
 }
 
 .float-right {
-    float: right;
+  float: right;
 }
 
 .padding-t10 {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }

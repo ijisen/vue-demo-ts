@@ -1,40 +1,51 @@
 <template>
-  <div id="index-layout">
-    <Left
-        :collapsed="collapsed"
-        :topNavEnable="topNavEnable"
-        :belongTopMenu="belongTopMenu"
-        :defaultActive="defaultActive"
-        :menuData="permissionMenuData" />
+  <div class="main-container">
+    <div class="content">
+      <LayoutHeader>
+        <template v-slot:userInfo>
+          <LayoutHeaderMessage />
+          <LayoutHeaderUserInfo />
+        </template>
+      </LayoutHeader>
+      <el-container>
+        <el-aside :width="collapsed ? '54px' :'200px'">
+          <LeftNavBar
+              :collapsed="collapsed"
+              :topNavEnable="topNavEnable"
+              :belongTopMenu="belongTopMenu"
+              :defaultActive="defaultActive"
+              :menuData="permissionMenuData" />
+        </el-aside>
+        <el-main>
+          <div class="el-main-container">
+            <Breadcrumb
+                :collapsed="collapsed"
+                :topNavEnable="topNavEnable"
+                :belongTopMenu="belongTopMenu"
+                :toggleCollapsed="toggleCollapsed"
+                :breadCrumbs="breadCrumbs"
+                :menuData="permissionMenuData" />
+            <div class="el-main-content">
+              <permission :roles="routeItem.roles">
+                <router-view />
+              </permission>
+            </div>
 
-    <div
-        id="index-layout-right"
-        :class="{'fixed-header': headFixed}"
-    >
-
-      <RightTop
-          :collapsed="collapsed"
-          :topNavEnable="topNavEnable"
-          :belongTopMenu="belongTopMenu"
-          :toggleCollapsed="toggleCollapsed"
-          :breadCrumbs="breadCrumbs"
-          :menuData="permissionMenuData" />
-
-      <div class="index-layout-right-main">
-        <permission :roles="routeItem.roles">
-          <router-view />
-        </permission>
-        <!--<RightFooter />-->
-      </div>
-
+            <!--<RightFooter />-->
+          </div>
+        </el-main>
+      </el-container>
     </div>
-
-    <!--<Settings />-->
-
   </div>
 </template>
 <script lang="ts">
-  import { defineComponent, computed } from "vue";
+  /**
+   ==============================================================
+   * Theme Name: BasicLayout 首页布局样式
+   * Author: jisen
+   * Edit Time: 2021-04-23
+   ============================================================== */
+  import { defineComponent, computed, PropType } from "vue";
   import { useStore } from 'vuex';
   import { useRoute } from 'vue-router';
   import { StateType as GlobalStateType } from '@/store/global';
@@ -47,9 +58,12 @@
   import { mergeUnique as ArrayMergeUnique } from '@/utils/array';
   import useTitle from '@/composables/useTitle';
   import { MenuList } from '@/router';
+  import LayoutHeader from '@/components/LayoutHeader/index.vue'
+  import LayoutHeaderMessage from './components/RightTopMessage.vue';
+  import LayoutHeaderUserInfo from './components/RightTopUser.vue';
+  import LeftNavBar from './components/LeftNavBar/index.vue';
+  import Breadcrumb from './components/Breadcrumb.vue';
   import Permission from '@/components/Permission/index.vue';
-  import Left from './components/Left.vue';
-  import RightTop from './components/RightTop.vue';
   // import RightFooter from './components/RightFooter.vue';
   // import Settings from "./components/Settings.vue";
 
@@ -66,11 +80,14 @@
   }
 
   export default defineComponent({
-    name: 'IndexLayout',
+    name: 'BasicLayout',
     components: {
+      LayoutHeader,
+      LayoutHeaderMessage,
+      LayoutHeaderUserInfo,
       Permission,
-      Left,
-      RightTop,
+      LeftNavBar,
+      Breadcrumb,
       // RightFooter,
       // Settings
     },
@@ -137,34 +154,90 @@
     }
   })
 </script>
-<style lang="scss">
-  @import '../../assets/css/variables.scss';
+<style lang="scss" scoped>
+  @import '../../assets/css/element-variables';
 
-  #index-layout {
+  $--header-height: 60px;
+  .main-container {
     display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
+    flex-direction: row;
+    flex: 1 1 auto;
 
-  #index-layout-right {
-    position: relative;
-    flex: 1;
-    overflow: auto;
-    background-color: $mainBgColor;
-
-    &.fixed-header {
+    .content {
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow-x: inherit;
+      min-height: 100vh;
+      flex: 1 1 auto;
 
-      .index-layout-right-main {
-        flex: 1;
-        overflow: auto;
+      .header {
+        flex: 0 0 auto;
+        height: $--header-height;
+        min-height: $--header-height;
+        max-height: $--header-height;
+        width: 100%;
+        background-color: $--color-primary;
+
+        .left {
+          padding: 10px 25px;
+          height: 100%;
+
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+
+        .right {
+          text-align: right;
+          height: 100%;
+          line-height: $--header-height;
+
+          p {
+            position: fixed;
+            right: 0;
+            margin-bottom: 0;
+            padding-right: 25px;
+            height: $--header-height;
+            width: 100%;
+            font-size: 13px;
+            color: #fff;
+
+            span {
+              cursor: pointer;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+        }
       }
     }
   }
 
-  .index-layout-main-content {
-    margin: 24px;
-    position: relative;
+  .el-container {
+    min-height: calc(100vh - 60px);
+    width: 100%;
+
+    .el-main {
+      padding: 0;
+      display: flex;
+      overflow: inherit;
+
+      .el-main-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        overflow-x: inherit;
+
+        .el-main-content {
+          padding: 10px;
+        }
+      }
+
+    }
   }
 </style>

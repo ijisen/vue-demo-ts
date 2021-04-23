@@ -4,13 +4,12 @@
  */
 import { createRouter, createWebHashHistory } from 'vue-router';
 import { RoutesDataItem } from "@/utils/routes";
-import { defineAsyncComponent } from "vue";
 
 const SecurityLayout = () => import('@/layouts/SecurityLayout.vue');
 
 const UserLayout = () => import('@/layouts/UserLayout/index.vue');
 
-const IndexLayout = () => import('@/layouts/IndexLayout/index.vue');
+const BasicLayout = () => import('@/layouts/BasicLayout/index.vue');
 
 const BlankLayout = () => import('@/layouts/BlankLayout.vue');
 
@@ -65,119 +64,119 @@ export const MenuList: Array<RoutesDataItem> = [
     ],
   },
 
-    {
-      icon: 'icon-file',
-      title: 'menu.pages',
-      path: '/sample',
-      redirect: '/sample/list/table',
-      component: BlankLayout,
-      children: [
-        {
-          icon: 'icon-file',
-          title: 'menu.pages.list',
-          path: 'list',
-          redirect: '/sample/list/table',
-          component: BlankLayout,
-          children: [
-            {
-              title: 'menu.pages.list.table',
-              path: 'table',
-              component: () => import('@/views/sample/list/table/index.vue'),
-            },
-            {
-              title: 'menu.pages.list.highly-adaptive-table',
-              path: 'highlyadaptivetable',
-              component: () => import('@/views/sample/list/highly-adaptive-table/index.vue'),
-            },
-            {
-              title: 'menu.pages.list.search',
-              path: 'search',
-              redirect: '/sample/list/search/table',
-              component: BlankLayout,
-              children: [
-                {
-                  title: 'menu.pages.list.search.table',
-                  path: 'table',
-                  component: () => import('@/views/sample/list/search/table/index.vue'),
-                }
-              ],
-            },
-          ],
-        },
-        {
-          icon: 'icon-file',
-          title: 'menu.pages.form',
-          path: 'form',
-          redirect: '/sample/form/basic',
-          component: BlankLayout,
-          children: [
-            {
-              title: 'menu.pages.form.basic',
-              path: 'basic',
-              component: () => import('@/views/sample/form/basic/index.vue'),
-            },
-            {
-              title: 'menu.pages.form.complex',
-              path: 'complex',
-              component: () => import('@/views/sample/form/complex/index.vue'),
-            },
-          ],
-        },
-        {
-          icon: 'icon-file',
-          title: 'menu.pages.detail',
-          path: 'detail',
-          redirect: '/sample/detail/basic',
-          component: BlankLayout,
-          children: [
-            {
-              title: 'menu.pages.detail.basic',
-              path: 'basic',
-              component: () => import('@/views/sample/detail/basic/index.vue'),
-            },
-            {
-              title: 'menu.pages.detail.module',
-              path: 'module',
-              component: () => import('@/views/sample/detail/module/index.vue'),
-            },
-            {
-              title: 'menu.pages.detail.table',
-              path: 'table',
-              component: () => import('@/views/sample/detail/table/index.vue'),
-            },
-          ],
-        },
-      ],
-    },
-    {
-      icon: 'icon-file',
-      title: 'menu.roles',
-      path: '/roles',
-      redirect: '/roles/all',
-      component: BlankLayout,
-      children: [
-        {
-          icon: 'icon-file',
-          title: 'menu.roles.all',
-          path: 'all',
-          component: () => import('@/views/roles/all/index.vue'),
-        },
-        {
-          icon: 'icon-file',
-          roles: ['user'],
-          title: 'menu.roles.user',
-          path: 'user',
-          component: () => import('@/views/roles/user/index.vue'),
-        },
-        {
-          icon: 'icon-file',
-          roles: ['test'],
-          title: 'menu.roles.test',
-          path: 'test',
-          component: () => import('@/views/roles/test/index.vue'),
-        },
-      ],
-    },
+  {
+    icon: 'icon-file',
+    title: 'menu.pages',
+    path: '/sample',
+    redirect: '/sample/list/table',
+    component: BlankLayout,
+    children: [
+      {
+        icon: 'icon-file',
+        title: 'menu.pages.list',
+        path: 'list',
+        redirect: '/sample/list/table',
+        component: BlankLayout,
+        children: [
+          {
+            title: 'menu.pages.list.table',
+            path: 'table',
+            component: () => import('@/views/sample/list/table/index.vue'),
+          },
+          {
+            title: 'menu.pages.list.highly-adaptive-table',
+            path: 'highlyadaptivetable',
+            component: () => import('@/views/sample/list/highly-adaptive-table/index.vue'),
+          },
+          {
+            title: 'menu.pages.list.search',
+            path: 'search',
+            redirect: '/sample/list/search/table',
+            component: BlankLayout,
+            children: [
+              {
+                title: 'menu.pages.list.search.table',
+                path: 'table',
+                component: () => import('@/views/sample/list/search/table/index.vue'),
+              }
+            ],
+          },
+        ],
+      },
+      {
+        icon: 'icon-file',
+        title: 'menu.pages.form',
+        path: 'form',
+        redirect: '/sample/form/basic',
+        component: BlankLayout,
+        children: [
+          {
+            title: 'menu.pages.form.basic',
+            path: 'basic',
+            component: () => import('@/views/sample/form/basic/index.vue'),
+          },
+          {
+            title: 'menu.pages.form.complex',
+            path: 'complex',
+            component: () => import('@/views/sample/form/complex/index.vue'),
+          },
+        ],
+      },
+      {
+        icon: 'icon-file',
+        title: 'menu.pages.detail',
+        path: 'detail',
+        redirect: '/sample/detail/basic',
+        component: BlankLayout,
+        children: [
+          {
+            title: 'menu.pages.detail.basic',
+            path: 'basic',
+            component: () => import('@/views/sample/detail/basic/index.vue'),
+          },
+          {
+            title: 'menu.pages.detail.module',
+            path: 'module',
+            component: () => import('@/views/sample/detail/module/index.vue'),
+          },
+          {
+            title: 'menu.pages.detail.table',
+            path: 'table',
+            component: () => import('@/views/sample/detail/table/index.vue'),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: 'icon-file',
+    title: 'menu.roles',
+    path: '/roles',
+    redirect: '/roles/all',
+    component: BlankLayout,
+    children: [
+      {
+        icon: 'icon-file',
+        title: 'menu.roles.all',
+        path: 'all',
+        component: () => import('@/views/roles/all/index.vue'),
+      },
+      {
+        icon: 'icon-file',
+        roles: ['user'],
+        title: 'menu.roles.user',
+        path: 'user',
+        component: () => import('@/views/roles/user/index.vue'),
+      },
+      {
+        icon: 'icon-file',
+        roles: ['test'],
+        title: 'menu.roles.test',
+        path: 'test',
+        component: () => import('@/views/roles/test/index.vue'),
+      },
+    ],
+  },
 
 ];
 
@@ -191,7 +190,7 @@ const routes: Array<RoutesDataItem> = [
         title: 'empty',
         path: '/',
         redirect: '/home/workplace',
-        component: IndexLayout,
+        component: BasicLayout,
         children: MenuList
       },
     ]

@@ -102,7 +102,7 @@
   import { ElForm, ElMessage } from 'element-plus';
   import { FormDataType } from './data.d';
   import { StateType as FormStateType } from './store';
-  import FooterToolbar from '@/layouts/IndexLayout/components/FooterToolbar.vue';
+  import FooterToolbar from '@/layouts/BasicLayout/components/FooterToolbar.vue';
   import TableForm from './components/TableForm/index.vue';
 
   interface FormComplexPageSetupData {

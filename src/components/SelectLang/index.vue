@@ -68,6 +68,9 @@ export default defineComponent({
 .dropDown {
   color: #fff;
   cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .menu {

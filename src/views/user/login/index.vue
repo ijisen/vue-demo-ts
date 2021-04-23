@@ -195,10 +195,10 @@
 
     .el-form {
       margin-left: 50px;
-      padding: 20px 30px;
+      padding: 20px 25px;
       display: inline-block;
       border: 1px solid #cadae2;
-      border-radius: 2px;
+      border-radius: 6px;
 
       .title {
         margin-top: 0;

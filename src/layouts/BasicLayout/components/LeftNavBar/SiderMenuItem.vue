@@ -15,17 +15,14 @@
               :routeItem="item2"
               :topNavEnable="topNavEnable"
               :belongTopMenu="belongTopMenu"
-          >
-          </sider-menu-item>
+          />
         </el-submenu>
       </template>
       <template v-else>
-        <a-link :to="item.path">
-          <el-menu-item :index="item.path">
-            <i v-if="item.icon" class="iconfont" :class="item.icon" />
-            <template #title>{{ t(item.title) }}</template>
-          </el-menu-item>
-        </a-link>
+        <el-menu-item :index="item.path" @click="handleClick(item)">
+          <i v-if="item.icon" class="iconfont" :class="item.icon" />
+          <template #title>{{ t(item.title) }}</template>
+        </el-menu-item>
       </template>
 
     </template>
@@ -35,7 +32,8 @@
   import { defineComponent, PropType, toRefs, computed } from 'vue';
   import { useI18n } from "vue-i18n";
   import { RoutesDataItem, setRoutePathForParent, getRouteBelongTopMenu, hasChildRoute } from '@/utils/routes';
-  import ALink from '@/components/ALink/index.vue';
+
+  // import ALink from '@/components/ALink/index.vue';
 
   interface SiderMenuItemSetupData {
     item: RoutesDataItem;
@@ -61,7 +59,7 @@
       }
     },
     components: {
-      ALink,
+      // ALink,
     },
     setup(props): SiderMenuItemSetupData {
 
@@ -78,6 +76,13 @@
         t
       }
 
+    },
+    methods: {
+      handleClick(item: RoutesDataItem) {
+        this.$router.push({
+          path: item.path
+        })
+      }
     }
   })
 </script>
