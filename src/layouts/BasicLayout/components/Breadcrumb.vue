@@ -2,28 +2,15 @@
   <div class="index-breadcrumb">
     <div class="content">
       <div class="flexible"
-           @click="() => {toggleCollapsed && toggleCollapsed();}">
+           @click="() => {toggleCollapsed && toggleCollapsed()}">
         <i class="el-icon-s-unfold"
-           v-if="collapsed" title="展开菜单" />
-        <i class="el-icon-s-fold" title="收起菜单" v-else />
+           title="展开菜单"
+           v-if="collapsed" />
+        <i class="el-icon-s-fold"
+           title="收起菜单" v-else />
       </div>
       <div class="index-layout-top-menu">
-        <div ref="topMenuCon" :style="{width: topMenuWidth}">
-          <template v-if="topNavEnable">
-            <template v-for="(item, key) in menuData">
-              <a-link
-                  :key="key"
-                  v-if="!item.hidden"
-                  :to="item.path"
-                  :class="{'active': belongTopMenu === item.path }"
-                  class="index-layout-top-menu-li"
-              >
-                {{ t(item.title) }}
-              </a-link>
-            </template>
-          </template>
-          <BreadCrumbs v-else class="breadcrumb" :list="breadCrumbs" />
-        </div>
+        <BreadCrumbs class="breadcrumb" :list="breadCrumbs" />
       </div>
       <!--<div class="index-layout-top-menu-right">
 
@@ -35,12 +22,12 @@
 
       </div>-->
     </div>
-    <div v-if="topNavEnable" class="index-layout-right-top-bot">
+    <!--<div v-if="topNavEnable" class="index-layout-right-top-bot">
       <div class="index-layout-right-top-bot-home">
         <i class="el-icon-s-home"></i>
       </div>
       <BreadCrumbs class="breadcrumb" :list="breadCrumbs"></BreadCrumbs>
-    </div>
+    </div>-->
   </div>
 </template>
 <script lang="ts">
@@ -49,21 +36,21 @@
   import { BreadcrumbType, RoutesDataItem } from '@/utils/routes';
   import BreadCrumbs from '@/components/BreadCrumbs/index.vue';
   // import SelectLang from '@/components/SelectLang/index.vue';
-  import ALink from '@/components/ALink/index.vue';
+  // import ALink from '@/components/ALink/index.vue';
   // import RightTopMessage from './RightTopMessage.vue';
   // import RightTopUser from './RightTopUser.vue';
-  import useTopMenuWidth from "../composables/useTopMenuWidth";
+  // import useTopMenuWidth from "../composables/useTopMenuWidth";
 
   interface RightTopSetupData {
     t: Function;
-    topMenuCon: Ref;
-    topMenuWidth: Ref;
+    // topMenuCon: Ref;
+    // topMenuWidth: Ref;
   }
 
   export default defineComponent({
     name: 'RightTop',
     components: {
-      ALink,
+      // ALink,
       BreadCrumbs,
       // RightTopMessage,
       // RightTopUser,
@@ -74,10 +61,10 @@
         type: Boolean,
         default: false
       },
-      topNavEnable: {
+      /*topNavEnable: {
         type: Boolean,
         default: true
-      },
+      },*/
       belongTopMenu: {
         type: String,
         default: ''
@@ -100,14 +87,14 @@
     },
     setup(props): RightTopSetupData {
       const { t } = useI18n();
-      const { topNavEnable } = toRefs(props);
+      // const { topNavEnable } = toRefs(props);
 
-      const { topMenuCon, topMenuWidth } = useTopMenuWidth(topNavEnable);
+      // const { topMenuCon, topMenuWidth } = useTopMenuWidth(topNavEnable);
 
       return {
         t,
-        topMenuCon,
-        topMenuWidth
+        // topMenuCon,
+        // topMenuWidth
       }
     }
   })
