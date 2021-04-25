@@ -1,5 +1,9 @@
+/* 主题颜色 */
+/* @import '~element-plus/packages/theme-chalk/src/common/var.scss' */
+$--theme-color: #1e3f5c !default;
+
 /* 改变主题色变量 */
-$--color-primary: #1e3f5c;
+$--color-primary: #1890ff !default;
 
 /// color|1|Font Color|2
 $--color-text-primary: #303133 !default;

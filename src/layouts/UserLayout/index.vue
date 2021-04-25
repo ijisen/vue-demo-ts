@@ -5,9 +5,8 @@
     <el-main>
       <router-view></router-view>
     </el-main>
-    <el-footer height="50px">
-      <span>京ICP备09107995号 京公网安备11010802010887号 版权所有Copyright 2010-2013 互联网域名系统北京市工程研究中心保留所有权利</span>
-    </el-footer>
+    <!-- 底部版权样式 -->
+    <LayoutFooter />
   </el-container>
 </template>
 <script lang="ts">
@@ -21,13 +20,15 @@
   import { useRoute } from 'vue-router';
   import { getRouteItem, RoutesDataItem, vueRoutes } from '@/utils/routes';
   import { UserLayoutRoutes } from '@/router';
-  import LayoutHeader from '@/components/LayoutHeader/index.vue'
+  import LayoutHeader from '../_component/LayoutHeader/index.vue'
+  import LayoutFooter from '../_component/LayoutFooter/index.vue'
   import useTitle from '@/composables/useTitle';
 
   export default defineComponent({
     name: 'UserLayout',
     components: {
       LayoutHeader,
+      LayoutFooter,
     },
     setup() {
       const route = useRoute();
@@ -65,7 +66,7 @@
     .el-footer {
       padding: 0;
       width: 100%;
-      background-color: $--color-primary;
+      background-color: $--theme-color;
       font-size: 12px;
       text-align: center;
       line-height: 50px;

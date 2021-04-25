@@ -55,7 +55,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: $--color-primary;
+    background-color: $--theme-color;
     color: #c0c4cc;
     transition-duration: 0.1s;
 

@@ -9,6 +9,12 @@
   </router-link>
 </template>
 <script lang="ts">
+  /**
+   ==============================================================
+   * Theme Name: 顶部消息消息渲染组件
+   * Author: jisen
+   * Edit Time: 2021-04-25
+   ============================================================== */
   import { computed, defineComponent, onMounted } from "vue";
   import { useStore } from "vuex";
   import { StateType as UserStateType } from "@/store/user";

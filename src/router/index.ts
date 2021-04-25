@@ -57,7 +57,7 @@ export const MenuList: Array<RoutesDataItem> = [
           },
           {
             title: 'menu.home.demo',
-            path: 'http://liqingsong.cc',
+            path: '/home',
           },
         ],
       },

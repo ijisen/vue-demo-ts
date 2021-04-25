@@ -83,14 +83,14 @@
       </el-card>
 
 
-      <FooterToolbar class="text-align-right">
+      <el-card>
         <el-button type="primary" @click="handleSubmit" :loading="submitLoading">
           提交
         </el-button>
         <el-button @click="resetFields">
           重置
         </el-button>
-      </FooterToolbar>
+      </el-card>
 
 
     </el-form>
@@ -102,7 +102,6 @@
   import { ElForm, ElMessage } from 'element-plus';
   import { FormDataType } from './data.d';
   import { StateType as FormStateType } from './store';
-  import FooterToolbar from '@/layouts/BasicLayout/components/FooterToolbar.vue';
   import TableForm from './components/TableForm/index.vue';
 
   interface FormComplexPageSetupData {
@@ -118,7 +117,6 @@
     name: 'FormComplexPage',
     components: {
       TableForm,
-      FooterToolbar,
     },
     setup(): FormComplexPageSetupData {
 

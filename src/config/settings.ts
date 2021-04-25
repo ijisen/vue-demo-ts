@@ -39,10 +39,10 @@ export interface SettingsType {
 }
 
 const settings: SettingsType = {
-    siteTitle: 'ADMIN-ELEMENT-VUE',
+    siteTitle: 'vue3-element-ts',
     topNavEnable: false,
     headFixed: false,
-    siteTokenKey: 'admin_element_vue_token',
+    siteTokenKey: 'vue3-element-ts_token',
     ajaxHeadersTokenKey: 'x-token',
     ajaxResponseNoVerifyUrl: [
         '/user/login', // 用户登录

@@ -17,6 +17,12 @@
   </el-dropdown>
 </template>
 <script lang="ts">
+  /**
+   ==============================================================
+   * Theme Name: 顶部用户信息渲染组件
+   * Author: jisen
+   * Edit Time: 2021-04-25
+   ============================================================== */
   import { computed, defineComponent } from "vue";
   import { useStore } from "vuex";
   import { useRouter } from "vue-router";
@@ -45,7 +51,7 @@
 
         if(command === 'logout') {
           const res: boolean = await store.dispatch('user/logout');
-          if(res === true) {
+          if(res) {
             router.replace({
               path: '/user/login',
               query: {
@@ -57,7 +63,6 @@
         }
 
       }
-
 
       return {
         t,

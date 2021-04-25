@@ -1,6 +1,6 @@
 /**
  * 国际化 utils
- * @author LiQingSong
+ * @author jisen
  */
 import { LocaleMessages } from '@intlify/core-base';
 import { VueMessageType } from "vue-i18n";
@@ -14,7 +14,7 @@ export const defaultLang = 'zh-CN';
 /**
  * 验证语言命名规则 zh-CN
  * @returns boolen
- * @author LiQingSong
+ * @author jisen
  */
 export const localeNameExp = (lang: string): boolean => {
     const localeExp = new RegExp(`^([a-z]{2})-?([A-Z]{2})?$`);
@@ -24,7 +24,7 @@ export const localeNameExp = (lang: string): boolean => {
 /**
  * 设置 html lang 属性值
  * @param lang 语言的 key
- * @author LiQingSong
+ * @author jisen
  */
 export const setHtmlLang = (lang: string) => {
     /**
@@ -37,7 +37,7 @@ export const setHtmlLang = (lang: string) => {
  * 获取当前选择的语言
  * 获取的浏览器语言默认项目中有可能不支持，所以在config/i18n.ts中要加以判断
  * @returns string
- * @author LiQingSong
+ * @author jisen
  */
 export const getLocale = (): string => {   
     const lang = typeof window.localStorage !== 'undefined' ? window.localStorage.getItem(localeKey) : '';    
@@ -50,7 +50,7 @@ export const getLocale = (): string => {
  * 切换语言
  * @param lang 语言的 key
  * @param realReload 是否刷新页面，默认刷新
- * @author LiQingSong
+ * @author jisen
  */
 export const setLocale = (lang: string, realReload = true, callback: Function) => {
   
@@ -78,7 +78,7 @@ export const setLocale = (lang: string, realReload = true, callback: Function) =
 
 /**
  * 自动导入 框架自定义语言
- * @author LiQingSong
+ * @author jisen
  */
 export function importAllLocales(): LocaleMessages<VueMessageType> {
     const modules: LocaleMessages<VueMessageType> = {};

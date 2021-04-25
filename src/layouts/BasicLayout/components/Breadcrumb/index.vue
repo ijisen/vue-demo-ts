@@ -4,70 +4,36 @@
       <div class="flexible"
            @click="() => {toggleCollapsed && toggleCollapsed()}">
         <i class="el-icon-s-unfold"
-           title="展开菜单"
+           :title="t('tooltip.openMenu')"
            v-if="collapsed" />
         <i class="el-icon-s-fold"
-           title="收起菜单" v-else />
+           :title="t('tooltip.closeMenu')" v-else />
       </div>
       <div class="index-layout-top-menu">
         <BreadCrumbs class="breadcrumb" :list="breadCrumbs" />
       </div>
-      <!--<div class="index-layout-top-menu-right">
-
-        <right-top-message />
-
-        <right-top-user />
-
-        <select-lang class="index-layout-top-selectlang" />
-
-      </div>-->
     </div>
-    <!--<div v-if="topNavEnable" class="index-layout-right-top-bot">
-      <div class="index-layout-right-top-bot-home">
-        <i class="el-icon-s-home"></i>
-      </div>
-      <BreadCrumbs class="breadcrumb" :list="breadCrumbs"></BreadCrumbs>
-    </div>-->
   </div>
 </template>
 <script lang="ts">
-  import { defineComponent, onMounted, PropType, Ref, toRefs } from "vue";
+  import { defineComponent, PropType } from "vue";
   import { useI18n } from "vue-i18n";
   import { BreadcrumbType, RoutesDataItem } from '@/utils/routes';
-  import BreadCrumbs from '@/components/BreadCrumbs/index.vue';
-  // import SelectLang from '@/components/SelectLang/index.vue';
-  // import ALink from '@/components/ALink/index.vue';
-  // import RightTopMessage from './RightTopMessage.vue';
-  // import RightTopUser from './RightTopUser.vue';
-  // import useTopMenuWidth from "../composables/useTopMenuWidth";
+  import BreadCrumbs from './BreadCrumbsComponent.vue';
 
   interface RightTopSetupData {
     t: Function;
-    // topMenuCon: Ref;
-    // topMenuWidth: Ref;
   }
 
   export default defineComponent({
     name: 'RightTop',
     components: {
-      // ALink,
       BreadCrumbs,
-      // RightTopMessage,
-      // RightTopUser,
-      // SelectLang,
     },
     props: {
       collapsed: {
         type: Boolean,
         default: false
-      },
-      /*topNavEnable: {
-        type: Boolean,
-        default: true
-      },*/
-      belongTopMenu: {
-        type: String,
-        default: ''
       },
       toggleCollapsed: {
         type: Function as PropType<() => void>
@@ -87,20 +53,15 @@
     },
     setup(props): RightTopSetupData {
       const { t } = useI18n();
-      // const { topNavEnable } = toRefs(props);
-
-      // const { topMenuCon, topMenuWidth } = useTopMenuWidth(topNavEnable);
 
       return {
         t,
-        // topMenuCon,
-        // topMenuWidth
       }
     }
   })
 </script>
 <style lang="scss" scoped>
-  @import '../../../assets/css/global.scss';
+  @import '../../../../assets/css/global';
   //$headerBreadcrumbHeight
   .index-breadcrumb {
     padding: 10px 10px 0;

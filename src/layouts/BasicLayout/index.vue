@@ -1,13 +1,17 @@
 <template>
   <div class="main-container">
     <div class="content">
+      <!-- 顶部导航栏组件 -->
       <LayoutHeader>
         <template v-slot:userInfo>
-          <LayoutHeaderMessage />
-          <LayoutHeaderUserInfo />
+          <!-- 待办信息 -->
+          <!-- <HeaderMessage />-->
+          <!-- 用户登录信息 -->
+          <HeaderUserInfo />
         </template>
       </LayoutHeader>
       <el-container>
+        <!-- 左侧菜单栏组件 -->
         <el-aside :width="collapsed ? '54px' :'200px'">
           <LeftNavBar
               :collapsed="collapsed"
@@ -16,15 +20,16 @@
               :defaultActive="defaultActive"
               :menuData="permissionMenuData" />
         </el-aside>
+        <!-- 右侧内容部分 -->
         <el-main>
           <div class="el-main-container">
+            <!-- 面包屑 -->
             <Breadcrumb
                 :collapsed="collapsed"
-                :topNavEnable="topNavEnable"
-                :belongTopMenu="belongTopMenu"
                 :toggleCollapsed="toggleCollapsed"
                 :breadCrumbs="breadCrumbs"
                 :menuData="permissionMenuData" />
+            <!-- 内容组件容器 -->
             <div class="el-main-content">
               <permission :roles="routeItem.roles">
                 <router-view />
@@ -45,27 +50,30 @@
    * Author: jisen
    * Edit Time: 2021-04-23
    ============================================================== */
-  import { defineComponent, computed, PropType } from "vue";
+  import { defineComponent, computed } from "vue";
   import { useStore } from 'vuex';
   import { useRoute } from 'vue-router';
   import { StateType as GlobalStateType } from '@/store/global';
   import { StateType as UserStateType } from "@/store/user";
   import {
-    vueRoutes, RoutesDataItem, getRouteItem, getSelectLeftMenuPath,
-    formatRoutePathTheParents, getRouteBelongTopMenu, getBreadcrumbRoutes,
-    BreadcrumbType, getPermissionMenuData
+    vueRoutes,
+    RoutesDataItem,
+    getRouteItem,
+    getSelectLeftMenuPath,
+    formatRoutePathTheParents,
+    getRouteBelongTopMenu,
+    getBreadcrumbRoutes,
+    BreadcrumbType,
+    getPermissionMenuData
   } from '@/utils/routes';
-  import { mergeUnique as ArrayMergeUnique } from '@/utils/array';
   import useTitle from '@/composables/useTitle';
   import { MenuList } from '@/router';
-  import LayoutHeader from '@/components/LayoutHeader/index.vue'
-  import LayoutHeaderMessage from './components/RightTopMessage.vue';
-  import LayoutHeaderUserInfo from './components/RightTopUser.vue';
-  import LeftNavBar from './components/LeftNavBar/index.vue';
-  import Breadcrumb from './components/Breadcrumb.vue';
   import Permission from '@/components/Permission/index.vue';
-  // import RightFooter from './components/RightFooter.vue';
-  // import Settings from "./components/Settings.vue";
+  import LayoutHeader from '../_component/LayoutHeader/index.vue'
+  // import HeaderMessage from './components/RightTopMessage.vue';
+  import HeaderUserInfo from './components/RightTopUser.vue';
+  import LeftNavBar from './components/LeftNavBar/index.vue';
+  import Breadcrumb from './components/Breadcrumb/index.vue';
 
   interface IndexLayoutSetupData {
     collapsed: boolean;
@@ -83,13 +91,12 @@
     name: 'BasicLayout',
     components: {
       LayoutHeader,
-      LayoutHeaderMessage,
-      LayoutHeaderUserInfo,
+      // HeaderMessage,
+      HeaderUserInfo,
       Permission,
       LeftNavBar,
       Breadcrumb,
       // RightFooter,
-      // Settings
     },
     setup(): IndexLayoutSetupData {
       const store = useStore<{
@@ -177,7 +184,7 @@
         min-height: $--header-height;
         max-height: $--header-height;
         width: 100%;
-        background-color: $--color-primary;
+        background-color: $--theme-color;
 
         .left {
           padding: 10px 25px;

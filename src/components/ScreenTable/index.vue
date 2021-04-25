@@ -93,7 +93,7 @@
       const tableHeight = ref<number>(200);
 
       const resizeHandler = debounce(() => {
-        if (conentRef.value) {
+        if(conentRef.value) {
           tableHeight.value = conentRef.value.offsetHeight;
         }
       }, 100);

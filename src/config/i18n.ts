@@ -1,6 +1,5 @@
 /**
  * 国际化 入口
- * @author LiQingSong
  */
 
 import { createI18n } from "vue-i18n";
@@ -34,6 +33,7 @@ const i18n = createI18n({
 /**
  * 设置语言
  * @param locale
+ * @param realReload
  */
 export function setI18nLanguage(locale: string, realReload = false) {
     setLocale(locale,realReload, function() {

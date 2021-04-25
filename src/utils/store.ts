@@ -1,6 +1,6 @@
 /**
  * Store utils
- * @author LiQingSong
+ * @author jisen
  */
 import { Module, ModuleTree } from 'vuex';
 
@@ -16,7 +16,7 @@ export interface StoreModuleType<S> extends Module<S, S> {
 
 /**
  * 自动导入 Store
- * @author LiQingSong
+ * @author jisen
  */
 export function importAllStore<S>(): ModuleTree<S> {
   const modules: ModuleTree<S> = {};
