@@ -3,7 +3,7 @@ const { VUE_APP_API_HOST } = process.env;
 const ajaxHeadersTokenKey = 'x-token';
 const mock = {};
 
-mock[`GET ${VUE_APP_API_HOST}/user/info`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST}/user/getUserInfo`] = (req, res) => {
     const headers = req.headers;
     if (headers[ajaxHeadersTokenKey] === 'admin') {
         res.send({

@@ -40,7 +40,7 @@ const settings: SettingsType = {
     ajaxHeadersTokenKey: 'x-token',
     ajaxResponseNoVerifyUrl: [
         '/user/login', // 用户登录
-        '/user/info', // 获取用户信息
+        '/user/getUserInfo', // 获取用户信息
     ],
     iconfontUrl: [],
 };

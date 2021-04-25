@@ -2,7 +2,7 @@ import request from '@/utils/request';
 
 export async function queryCurrent(): Promise<any> {
   return request({
-    url: '/user/info',
+    url: '/user/getUserInfo',
     method: 'get'
   });
 }
