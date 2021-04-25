@@ -60,14 +60,8 @@
     "pre-commit": "lint-staged"
   },
   "keywords": [
-    "vue",
-    "vue3",
     "vue3.0",
-    "vue3.x",
     "typescript",
-    "admin",
-    "template",
-    "element-ui",
     "element Plus"
   ],
   "lint-staged": {
