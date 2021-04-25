@@ -13,7 +13,7 @@
   import { useStore } from "vuex";
   import { useRouter } from "vue-router";
   import Spin from '@/components/Spin/index.vue';
-  import { StateType as UserStateType, CurrentUser } from "@/store/user";
+  import { StateType as UserStateType, CurrentUser } from "@/store/userInfo";
 
   interface SecurityLayoutSetupData {
     isLogin: boolean;
@@ -29,10 +29,10 @@
     },
     setup(): SecurityLayoutSetupData {
       const router = useRouter();
-      const store = useStore<{ user: UserStateType }>();
+      const store = useStore<{ userInfo: UserStateType }>();
 
       // 获取当前登录用户信息
-      const currentUser = computed<CurrentUser>(() => store.state.user.currentUser);
+      const currentUser = computed<CurrentUser>(() => store.state.userInfo.currentUser);
 
       // 判断是否登录
       const isLogin = computed<boolean>(() => currentUser.value ? currentUser.value.id > 0 : false);
@@ -42,7 +42,7 @@
       const loading = ref<boolean>(false);
       const getUser = async () => {
         loading.value = true;
-        await store.dispatch('user/fetchCurrent');
+        await store.dispatch('userInfo/fetchCurrent');
         if(!isLogin.value && router.currentRoute.value.path !== '/user/login') {
           router.replace({
             path: '/user/login',

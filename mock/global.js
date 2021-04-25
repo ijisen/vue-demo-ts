@@ -1,7 +1,7 @@
-const { VUE_APP_APIHOST } = process.env;
+const { VUE_APP_API_HOST } = process.env;
 const mock = {};
 
-mock[`POST ${VUE_APP_APIHOST || ''}/uploads`] = (req, res) => {
+mock[`POST ${VUE_APP_API_HOST || ''}/uploads`] = (req, res) => {
   res.send({
     code: 0,
     data: {
@@ -14,7 +14,7 @@ mock[`POST ${VUE_APP_APIHOST || ''}/uploads`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST}/500`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST}/500`] = (req, res) => {
     res.status(500).send({
       timestamp: 1513932555104,
       status: 500,
@@ -24,7 +24,7 @@ mock[`GET ${VUE_APP_APIHOST}/500`] = (req, res) => {
     });
 };
 
-mock[`GET ${VUE_APP_APIHOST}/404`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST}/404`] = (req, res) => {
     res.status(404).send({
       timestamp: 1513932643431,
       status: 404,

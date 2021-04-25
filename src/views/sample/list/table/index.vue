@@ -179,7 +179,7 @@
       const createSubmit = async (values: Omit<TableListItem, 'id'>, resetFields: () => void) => {
         createSubmitLoading.value = true;
         const res: boolean = await store.dispatch('ListTable/createTableData', values);
-        if (res === true) {
+        if(res === true) {
           resetFields();
           setCreateFormVisible(false);
           ElMessage.success('新增成功！');
@@ -204,7 +204,7 @@
       const updateSubmit = async (values: TableListItem, resetFields: () => void) => {
         updateSubmitLoading.value = true;
         const res: boolean = await store.dispatch('ListTable/updateTableData', values);
-        if (res === true) {
+        if(res === true) {
           updataFormCancel();
           ElMessage.success('编辑成功！');
           getList(pagination.value.current);
@@ -218,7 +218,7 @@
       const detailUpdateData = async (id: number) => {
         detailUpdateLoading.value = [id];
         const res: boolean = await store.dispatch('ListTable/queryUpdateData', id);
-        if (res === true) {
+        if(res === true) {
           setUpdateFormVisible(true);
         }
         detailUpdateLoading.value = [];
@@ -237,7 +237,7 @@
         }).then(async () => {
           deleteLoading.value = [id];
           const res: boolean = await store.dispatch('ListTable/deleteTableData', id);
-          if (res === true) {
+          if(res === true) {
             ElMessage.success('删除成功！');
             getList(pagination.value.current);
           }

@@ -81,7 +81,7 @@ const errorHandler = (error: any) => {
  * 配置request请求时的默认参数
  */
 const request = axios.create({
-  baseURL: process.env.VUE_APP_APIHOST, // url = api url + request url
+  baseURL: process.env.VUE_APP_API_HOST, // url = api url + request url
   withCredentials: true, // 当跨域请求时发送cookie
   timeout: 0 // 请求超时时间,5000(单位毫秒) / 0 不做限制
 });

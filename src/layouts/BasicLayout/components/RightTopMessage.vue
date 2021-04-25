@@ -17,7 +17,7 @@
    ============================================================== */
   import { computed, defineComponent, onMounted } from "vue";
   import { useStore } from "vuex";
-  import { StateType as UserStateType } from "@/store/user";
+  import { StateType as UserStateType } from "@/store/userInfo";
 
   interface RightTopMessageSetupData {
     message: number;
@@ -27,13 +27,13 @@
     name: 'RightTopMessage',
     setup(): RightTopMessageSetupData {
 
-      const store = useStore<{ user: UserStateType }>();
+      const store = useStore<{ userInfo: UserStateType }>();
 
-      const message = computed<number>(() => store.state.user.message);
+      const message = computed<number>(() => store.state.userInfo.message);
 
 
       onMounted(() => {
-        store.dispatch("user/fetchMessage");
+        store.dispatch("userInfo/fetchMessage");
       })
 
 

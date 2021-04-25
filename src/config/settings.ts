@@ -13,11 +13,6 @@ export interface SettingsType {
     topNavEnable: boolean;
 
     /**
-     * 头部固定开启
-     */
-    headFixed: boolean;
-
-    /**
      * 站点本地存储Token 的 Key值
      */
     siteTokenKey: string;
@@ -41,7 +36,6 @@ export interface SettingsType {
 const settings: SettingsType = {
     siteTitle: 'vue3-element-ts',
     topNavEnable: false,
-    headFixed: false,
     siteTokenKey: 'vue3-element-ts_token',
     ajaxHeadersTokenKey: 'x-token',
     ajaxResponseNoVerifyUrl: [

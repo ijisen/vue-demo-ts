@@ -1,25 +1,25 @@
 <template>
     <div class="main">
         <h1 class="title">
-            {{t('page.user.register.form.title')}}
+            {{t('page.account.register.form.title')}}
         </h1>
         <el-form :model="modelRef" :rules="rulesRef" ref="formRef">
             <el-form-item label="" prop="username">
-                <el-input v-model="modelRef.username" :placeholder="t('page.user.register.form-item-username')" @keydown.enter="handleSubmit"/>
+                <el-input v-model="modelRef.username" :placeholder="t('page.account.register.form-item-username')" @keydown.enter="handleSubmit"/>
             </el-form-item>
             <el-form-item label="" prop="password">
-                <el-input type="password" v-model="modelRef.password" :placeholder="t('page.user.register.form-item-password')" @keydown.enter="handleSubmit"/>
+                <el-input type="password" v-model="modelRef.password" :placeholder="t('page.account.register.form-item-password')" @keydown.enter="handleSubmit"/>
             </el-form-item>
             <el-form-item label="" prop="confirm">
-                <el-input type="password" v-model="modelRef.confirm" :placeholder="t('page.user.register.form-item-confirmpassword')" @keydown.enter="handleSubmit"/>
+                <el-input type="password" v-model="modelRef.confirm" :placeholder="t('page.account.register.form-item-confirmPassword')" @keydown.enter="handleSubmit"/>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" class="submit"  @click="handleSubmit" :loading="submitLoading">
-                    {{t('page.user.register.form.btn-submit')}}
+                    {{t('page.account.register.form.btn-submit')}}
                 </el-button>  
                 <div class="text-align-right">
                     <router-link to="/user/login">
-                        {{t('page.user.register.form.btn-jump')}}
+                        {{t('page.account.register.form.btn-jump')}}
                     </router-link>
                 </div>              
             </el-form-item>
@@ -66,22 +66,22 @@ export default defineComponent({
             username: [
                 {
                     required: true,
-                    message: t('page.user.register.form-item-username.required'),
+                    message: t('page.account.register.form-item-username.required'),
                 },
             ],
             password: [
                 {
                     required: true,
-                    message: t('page.user.register.form-item-password.required'),
+                    message: t('page.account.register.form-item-password.required'),
                 },
             ],
             confirm: [
                 {
                     validator: (rule: any, value: string, callback: any) => {
                         if (value === '') {
-                            return Promise.reject(t('page.user.register.form-item-password.required'));
+                            return Promise.reject(t('page.account.register.form-item-password.required'));
                         } else if (value !== modelRef.password) {
-                            return Promise.reject(t("page.user.register.form-item-confirmpassword.compare"));
+                            return Promise.reject(t("page.account.register.form-item-confirmPassword.compare"));
                         } else {
                             return Promise.resolve();
                         }
@@ -100,8 +100,8 @@ export default defineComponent({
                 const valid: boolean | undefined =  await formRef.value?.validate();
                 if(valid === true) {
                     const res: boolean = await store.dispatch('userregister/register',modelRef);                
-                    if (res === true) {
-                        ElMessage.success(t('page.user.register.form.register-success'));
+                    if (res) {
+                        ElMessage.success(t('page.account.register.form.register-success'));
                         router.replace('/user/login');
                     }
                 }

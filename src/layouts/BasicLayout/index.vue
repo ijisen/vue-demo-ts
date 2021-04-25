@@ -54,7 +54,7 @@
   import { useStore } from 'vuex';
   import { useRoute } from 'vue-router';
   import { StateType as GlobalStateType } from '@/store/global';
-  import { StateType as UserStateType } from "@/store/user";
+  import { StateType as UserStateType } from "@/store/userInfo";
   import {
     vueRoutes,
     RoutesDataItem,
@@ -80,7 +80,6 @@
     toggleCollapsed: () => void;
     topNavEnable: boolean;
     belongTopMenu: string;
-    headFixed: boolean;
     defaultActive: string;
     breadCrumbs: BreadcrumbType[];
     permissionMenuData: RoutesDataItem[];
@@ -101,7 +100,7 @@
     setup(): IndexLayoutSetupData {
       const store = useStore<{
         global: GlobalStateType;
-        user: UserStateType;
+        userInfo: UserStateType;
       }>();
       const route = useRoute();
 
@@ -113,7 +112,7 @@
       const routeItem = computed<RoutesDataItem>(() => getRouteItem(route.path, menuData));
 
       // 有权限的菜单
-      const permissionMenuData = computed<RoutesDataItem[]>(() => getPermissionMenuData(store.state.user.currentUser.roles, menuData));
+      const permissionMenuData = computed<RoutesDataItem[]>(() => getPermissionMenuData(store.state.userInfo.currentUser.roles, menuData));
 
       // 当前路由的顶部菜单path
       const belongTopMenu = computed<string>(() => getRouteBelongTopMenu(routeItem.value))
@@ -129,10 +128,6 @@
 
       // 右侧顶部导航是否开启
       const topNavEnable = computed<boolean>(() => store.state.global.topNavEnable);
-
-      // 右侧顶部是否固定
-      const headFixed = computed<boolean>(() => store.state.global.headFixed);
-
 
       // 左侧选择的菜单
       const defaultActive = computed<string>(() => getSelectLeftMenuPath(routeItem.value));
@@ -150,7 +145,6 @@
         toggleCollapsed,
         topNavEnable: topNavEnable as unknown as boolean,
         belongTopMenu: belongTopMenu as unknown as string,
-        headFixed: headFixed as unknown as boolean,
         defaultActive: defaultActive as unknown as string,
         breadCrumbs: breadCrumbs as unknown as BreadcrumbType[],
         permissionMenuData: permissionMenuData as unknown as RoutesDataItem[],

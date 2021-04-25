@@ -180,9 +180,9 @@
         submitLoading.value = true;
         try {
           const valid: boolean | undefined = await formRef.value?.validate();
-          if (valid === true) {
+          if(valid === true) {
             const res: boolean = await store.dispatch('FormComplex/create', modelRef);
-            if (res === true) {
+            if(res === true) {
               ElMessage.success('提交成功');
               resetFields();
             }

@@ -1,9 +1,9 @@
 const mockjs= require('mockjs');
-const { VUE_APP_APIHOST } = process.env;
+const { VUE_APP_API_HOST } = process.env;
 const mock = {};
 
 
-mock[`GET ${VUE_APP_APIHOST || ''}/pages/detail`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/pages/detail`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({
@@ -49,7 +49,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/pages/detail`] = (req, res) => {
   });
 };
 
-mock[`POST ${VUE_APP_APIHOST || ''}/pages/form`] = (req, res) => {
+mock[`POST ${VUE_APP_API_HOST || ''}/pages/form`] = (req, res) => {
   res.send({
     code: 0,
     data: '',
@@ -57,7 +57,7 @@ mock[`POST ${VUE_APP_APIHOST || ''}/pages/form`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/pages/list`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/pages/list`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({
@@ -76,28 +76,28 @@ mock[`GET ${VUE_APP_APIHOST || ''}/pages/list`] = (req, res) => {
   });
 };
 
-mock[`POST ${VUE_APP_APIHOST || ''}/pages/list`] = (req, res) => {
+mock[`POST ${VUE_APP_API_HOST || ''}/pages/list`] = (req, res) => {
   res.send({
     code: 0,
     data: '',
   });
 };
 
-mock[`PUT ${VUE_APP_APIHOST || ''}/pages/list/*`] = (req, res) => {
+mock[`PUT ${VUE_APP_API_HOST || ''}/pages/list/*`] = (req, res) => {
   res.send({
     code: 0,
     data: '',
   });
 };
 
-mock[`DELETE ${VUE_APP_APIHOST || ''}/pages/list/*`] = ( req, res) => {
+mock[`DELETE ${VUE_APP_API_HOST || ''}/pages/list/*`] = ( req, res) => {
   res.send({
     code: 0,
     data: '',
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/pages/list/*`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/pages/list/*`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({

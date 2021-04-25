@@ -7,8 +7,6 @@ export interface StateType {
   collapsed: boolean;
   // 顶部菜单开启
   topNavEnable: boolean;
-  // 头部固定开启
-  headFixed: boolean;
 }
 
 export interface ModuleType extends StoreModuleType<StateType> {
@@ -16,7 +14,6 @@ export interface ModuleType extends StoreModuleType<StateType> {
   mutations: {
     changeLayoutCollapsed: Mutation<StateType>;
     setTopNavEnable: Mutation<StateType>;
-    setHeadFixed: Mutation<StateType>;
   };
   actions: {};
 }
@@ -24,7 +21,6 @@ export interface ModuleType extends StoreModuleType<StateType> {
 const initState: StateType = {
   collapsed: false,
   topNavEnable: settings.topNavEnable,
-  headFixed: settings.headFixed,
 };
 
 const StoreModel: ModuleType = {
@@ -39,9 +35,6 @@ const StoreModel: ModuleType = {
     },
     setTopNavEnable(state, payload) {
       state.topNavEnable = payload;
-    },
-    setHeadFixed(state, payload) {
-      state.headFixed = payload;
     }
   },
   actions: {}

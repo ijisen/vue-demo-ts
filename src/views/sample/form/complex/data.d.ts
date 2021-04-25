@@ -1,4 +1,5 @@
 import { TableFormDataType } from "./components/TableForm/data.d";
+
 export interface FormDataType {
   title: string;
   date: string[];

@@ -26,12 +26,12 @@ export function importAllStore<S>(): ModuleTree<S> {
     viewsRequireContext.keys().forEach(fileName => {
       // 获取内容
       const modulesContent = viewsRequireContext(fileName);
-      if (modulesContent.default) {
-        const {name, ...module} = modulesContent.default;
+      if(modulesContent.default) {
+        const { name, ...module } = modulesContent.default;
         // 获取 PascalCase 命名
         const modulesName = name || fileName.replace(/^\.\/(.*)\.\w+$/, "$1");
 
-        modules[modulesName] = {...module};
+        modules[modulesName] = { ...module };
       }
 
     });
@@ -41,12 +41,12 @@ export function importAllStore<S>(): ModuleTree<S> {
     requireContext.keys().forEach(fileName => {
       // 获取内容
       const modulesContent = requireContext(fileName);
-      if (modulesContent.default) {
-        const {name, ...module} = modulesContent.default;
+      if(modulesContent.default) {
+        const { name, ...module } = modulesContent.default;
         // 获取 PascalCase 命名
         const modulesName = name || fileName.replace(/^\.\/(.*)\.\w+$/, "$1");
 
-        modules[modulesName] = {...module};
+        modules[modulesName] = { ...module };
       }
 
     });

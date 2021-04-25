@@ -19,7 +19,7 @@ export async function createData(params: Omit<TableListItem, 'id'>): Promise<any
 
 export async function updateData(id: number, params: Omit<TableListItem, 'id'>): Promise<any> {
   return request({
-    url: `/pages/list/${id}`,
+    url: `/pages/list/${ id }`,
     method: 'PUT',
     data: params,
   });
@@ -27,11 +27,11 @@ export async function updateData(id: number, params: Omit<TableListItem, 'id'>):
 
 export async function removeData(id: number): Promise<any> {
   return request({
-    url: `/pages/list/${id}`, 
+    url: `/pages/list/${ id }`,
     method: 'delete',
   });
 }
 
 export async function detailData(id: number): Promise<any> {
-  return request({url: `/pages/list/${id}`});
+  return request({ url: `/pages/list/${ id }` });
 }

@@ -27,7 +27,7 @@
   import { useStore } from "vuex";
   import { useRouter } from "vue-router";
   import { useI18n } from "vue-i18n";
-  import { StateType as UserStateType, CurrentUser } from "@/store/user";
+  import { StateType as UserStateType, CurrentUser } from "@/store/userInfo";
 
   interface RightTopUserSetupData {
     t: Function;
@@ -38,13 +38,13 @@
   export default defineComponent({
     name: 'RightTopUser',
     setup(): RightTopUserSetupData {
-      const store = useStore<{ user: UserStateType }>();
+      const store = useStore<{ userInfo: UserStateType }>();
       const router = useRouter();
       const { t } = useI18n();
 
 
       // 获取当前登录用户信息
-      const currentUser = computed<CurrentUser>(() => store.state.user.currentUser);
+      const currentUser = computed<CurrentUser>(() => store.state.userInfo.currentUser);
 
       // 点击菜单
       const onMenuClick = async (command: string) => {

@@ -38,38 +38,38 @@
 <script lang="ts">
   import { defineAsyncComponent, defineComponent } from 'vue';
 
-  import PageLoading from './components/PageLoading/index.vue';
+  import PageLoading from './_component/PageLoading/index.vue';
 
   const ArticleChartCard = defineAsyncComponent({
-    loader: () => import('./components/ArticleChartCard/index.vue'),
+    loader: () => import('./_component/ArticleChartCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const WorksChartCard = defineAsyncComponent({
-    loader: () => import('./components/WorksChartCard/index.vue'),
+    loader: () => import('./_component/WorksChartCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const TopicsChartCard = defineAsyncComponent({
-    loader: () => import('./components/TopicsChartCard/index.vue'),
+    loader: () => import('./_component/TopicsChartCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const LinksChartCard = defineAsyncComponent({
-    loader: () => import('./components/LinksChartCard/index.vue'),
+    loader: () => import('./_component/LinksChartCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const HotSearchCard = defineAsyncComponent({
-    loader: () => import('./components/HotSearchCard/index.vue'),
+    loader: () => import('./_component/HotSearchCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const HotTagsCard = defineAsyncComponent({
-    loader: () => import('./components/HotTagsCard/index.vue'),
+    loader: () => import('./_component/HotTagsCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const ArticleHitCard = defineAsyncComponent({
-    loader: () => import('./components/ArticleHitCard/index.vue'),
+    loader: () => import('./_component/ArticleHitCard/index.vue'),
     loadingComponent: PageLoading,
   });
   const WorksHitCard = defineAsyncComponent({
-    loader: () => import('./components/WorksHitCard/index.vue'),
+    loader: () => import('./_component/WorksHitCard/index.vue'),
     loadingComponent: PageLoading,
   });
 

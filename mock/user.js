@@ -1,9 +1,9 @@
 const mockjs= require('mockjs');
-const { VUE_APP_APIHOST } = process.env;
+const { VUE_APP_API_HOST } = process.env;
 const ajaxHeadersTokenKey = 'x-token';
 const mock = {};
 
-mock[`GET ${VUE_APP_APIHOST}/user/info`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST}/user/info`] = (req, res) => {
     const headers = req.headers;
     if (headers[ajaxHeadersTokenKey] === 'admin') {
         res.send({
@@ -45,14 +45,14 @@ mock[`GET ${VUE_APP_APIHOST}/user/info`] = (req, res) => {
 
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/user/message`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/user/message`] = (req, res) => {
     res.send({
       code: 0,
       data: mockjs.mock('@integer(0,99)'),
     });
 };
   
-mock[`POST ${VUE_APP_APIHOST || ''}/user/login`] = (req, res) => {
+mock[`POST ${VUE_APP_API_HOST || ''}/user/login`] = (req, res) => {
     const { password, username } = req.body;
     const send = { code: 0, data: {}, msg: '' };
     if (username === 'admin' && password === '123456') {
@@ -75,7 +75,7 @@ mock[`POST ${VUE_APP_APIHOST || ''}/user/login`] = (req, res) => {
     res.send(send);
 };
   
-mock[`POST ${VUE_APP_APIHOST || ''}/user/register`] = (req, res) => {
+mock[`POST ${VUE_APP_API_HOST || ''}/user/register`] = (req, res) => {
     res.send({
       code: 0,
       data: '',

@@ -1,8 +1,8 @@
 const mockjs= require('mockjs');
-const { VUE_APP_APIHOST } = process.env;
+const { VUE_APP_API_HOST } = process.env;
 const mock = {};
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/articles/dailynew`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/articles/dailynew`] = (req, res) => {
   res.send({
     code: 0,
     data: {
@@ -14,7 +14,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/articles/dailynew`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/works/weeknew`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/works/weeknew`] = (req, res) => {
   res.send({
     code: 0,
     data: {
@@ -28,7 +28,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/works/weeknew`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/topics/monthnew`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/topics/monthnew`] = (req, res) => {
   res.send({
     code: 0,
     data: {
@@ -42,7 +42,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/topics/monthnew`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/links/annualnew`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/links/annualnew`] = (req, res) => {
   res.send({
     code: 0,
     data: {
@@ -56,7 +56,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/links/annualnew`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/searchs/keywords`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/searchs/keywords`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({
@@ -72,7 +72,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/searchs/keywords`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/tags`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/tags`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({
@@ -90,7 +90,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/tags`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/articles`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/articles`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({
@@ -114,7 +114,7 @@ mock[`GET ${VUE_APP_APIHOST || ''}/home/articles`] = (req, res) => {
   });
 };
 
-mock[`GET ${VUE_APP_APIHOST || ''}/home/works`] = (req, res) => {
+mock[`GET ${VUE_APP_API_HOST || ''}/home/works`] = (req, res) => {
   res.send({
     code: 0,
     data: mockjs.mock({

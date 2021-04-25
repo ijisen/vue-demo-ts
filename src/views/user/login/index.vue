@@ -9,11 +9,11 @@
                size="medium"
                ref="formRef">
         <h1 class="title">
-          {{ t('page.user.login.form.title') }}
+          {{ t('page.account.login.form.title') }}
         </h1>
         <el-form-item label="" prop="username">
           <el-input v-model="modelRef.username"
-                    :placeholder="t('page.user.login.form-item-username')"
+                    :placeholder="t('page.account.login.form-item-username')"
                     @keydown.enter="handleSubmit">
             <template #prefix>
               <i class="el-icon-user el-input__icon" />
@@ -23,7 +23,7 @@
         <el-form-item label="" prop="password">
           <el-input v-model="modelRef.password"
                     type="password"
-                    :placeholder="t('page.user.login.form-item-password')"
+                    :placeholder="t('page.account.login.form-item-password')"
                     @keydown.enter="handleSubmit">
             <template #prefix>
               <i class="el-icon-unlock el-input__icon" />
@@ -32,7 +32,7 @@
         </el-form-item>
         <el-form-item label="" prop="phone">
           <el-input v-model="modelRef.phone"
-                    :placeholder="t('page.user.login.form-item-password')"
+                    :placeholder="t('page.account.login.form-item-password')"
                     @keydown.enter="handleSubmit">
             <template #prefix>
               <i class="el-icon-phone-outline el-input__icon" />
@@ -43,7 +43,7 @@
           <el-row>
             <el-col span="16">
               <el-input v-model="modelRef.captcha"
-                        :placeholder="t('page.user.login.form-item-password')"
+                        :placeholder="t('page.account.login.form-item-password')"
                         @keydown.enter="handleSubmit">
                 <template #prefix>
                   <i class="icon-mail iconfont" />
@@ -56,32 +56,37 @@
           </el-row>
         </el-form-item>
         <el-form-item class="mbl">
+
+          <el-alert v-if="loginStatus === 'error' && !submitLoading"
+                    :title="t('page.account.login.form.login-error')"
+                    type="error"
+                    show-icon
+                    class="ptn pbn"
+                    :closable="false" />
+
           <el-button type="primary"
                      class="submit mtl"
                      @click="handleSubmit"
                      :loading="submitLoading">
-            {{ t('page.user.login.form.btn-submit') }}
+            {{ t('page.account.login.form.btn-submit') }}
           </el-button>
-          <!--<div class="text-align-right">
-            <router-link to="/user/register">
-              {{ t('page.user.login.form.btn-jump') }}
-            </router-link>
-          </div>-->
         </el-form-item>
-
-        <el-alert v-if="loginStatus === 'error' && !submitLoading" :title="t('page.user.login.form.login-error')"
-                  type="error" show-icon :closable="false" />
 
       </el-form>
     </el-col>
   </el-row>
 </template>
 <script lang="ts">
-  import { computed, defineComponent, reactive, ref, watch, Ref } from "vue";
+  import {
+    computed,
+    defineComponent,
+    reactive,
+    ref,
+  } from "vue";
   import { useRouter } from 'vue-router';
   import { useStore } from 'vuex';
   import { useI18n } from "vue-i18n";
-  import { ElForm, ElMessage } from 'element-plus';
+  import { ElForm } from 'element-plus';
   import { LoginParamsType } from './data.d';
   import { StateType as UserLoginStateType } from './store';
 
@@ -101,7 +106,7 @@
     setup(): UserLoginSetupData {
       const router = useRouter();
       const { currentRoute } = router;
-      const store = useStore<{ userlogin: UserLoginStateType }>();
+      const store = useStore<{ userLogin: UserLoginStateType }>();
       const { t } = useI18n();
 
 
@@ -115,25 +120,25 @@
         username: [
           {
             required: true,
-            message: t('page.user.login.form-item-username.required'),
+            message: t('page.account.login.form-item-username.required'),
           },
         ],
         password: [
           {
             required: true,
-            message: t('page.user.login.form-item-password.required'),
+            message: t('page.account.login.form-item-password.required'),
           },
         ],
         phone: [
           {
             required: true,
-            message: t('page.user.login.form-item-password.required'),
+            message: t('page.account.login.form-item-password.required'),
           },
         ],
         captcha: [
           {
             required: true,
-            message: t('page.user.login.form-item-password.required'),
+            message: t('page.account.login.form-item-password.required'),
           },
         ],
       });
@@ -147,9 +152,9 @@
         try {
           const valid: boolean | undefined = await formRef.value?.validate();
           if(valid === true) {
-            const res: boolean = await store.dispatch('userlogin/login', modelRef);
+            const res: boolean = await store.dispatch('userLogin/login', modelRef);
             if(res) {
-              ElMessage.success(t('page.user.login.form.login-success'));
+              // ElMessage.success(t('page.account.login.form.login-success'));
               const { redirect, ...query } = currentRoute.value.query;
               await router.replace({
                 path: redirect as string || '/',
@@ -161,13 +166,13 @@
           }
         } catch (error) {
           // console.log(error);
-          ElMessage.warning(t('app.global.form.validatefields.catch'));
+          // ElMessage.warning(t('app.global.form.validatefields.catch'));
         }
         submitLoading.value = false;
       }
 
       // 登录状态
-      const loginStatus = computed<"ok" | "error" | undefined>(() => store.state.userlogin.loginStatus);
+      const loginStatus = computed<"ok" | "error" | undefined>(() => store.state.userLogin.loginStatus);
 
 
       return {

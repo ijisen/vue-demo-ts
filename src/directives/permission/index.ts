@@ -13,7 +13,7 @@
  *      <a href="#" v-permission="['admin','test']">删除</a>
  */
 import { Directive } from "vue";
-import UserModel from "@/store/user";
+import UserModel from "@/store/userInfo";
 import { hasPermissionRouteRoles } from "@/utils/routes";
 
 const permission: Directive = (el, binding, vnode, prevVNode) => {

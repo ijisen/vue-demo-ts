@@ -24,7 +24,7 @@
   import { useStore } from "vuex";
   import { useI18n } from "vue-i18n";
   import Result from '@/components/Result/index.vue';
-  import { StateType as UserStateType } from "@/store/user";
+  import { StateType as UserStateType } from "@/store/userInfo";
   import { hasPermissionRouteRoles } from "@/utils/routes";
 
 
@@ -44,11 +44,11 @@
       Result
     },
     setup(props): PermissionSetupData {
-      const store = useStore<{ user: UserStateType }>();
+      const store = useStore<{ userInfo: UserStateType }>();
       const { t } = useI18n();
 
       // 是否有权限
-      const isPermission = computed(() => hasPermissionRouteRoles(store.state.user.currentUser.roles, props.roles));
+      const isPermission = computed(() => hasPermissionRouteRoles(store.state.userInfo.currentUser.roles, props.roles));
 
       return {
         t,

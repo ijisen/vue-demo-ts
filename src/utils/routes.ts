@@ -98,7 +98,7 @@ export const getRouteItem = (pathname: string, routesData: RoutesDataItem[]): Ro
  * 根据 hidden 判断是否有数据子集
  * @param children RoutesDataItem[]
  */
-export const hasChildRoute = (children: RoutesDataItem[]): boolean => {
+export const hasChildRoute = (children: any[]): boolean => {
   const showChildren = children.filter(item => {
     return !item.hidden;
 

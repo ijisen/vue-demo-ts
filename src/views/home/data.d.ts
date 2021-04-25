@@ -1,7 +1,7 @@
-import { TableListItem as HotSearchTableListItem } from './components/HotSearchCard/data.d';
-import { TableListItem as HotTagsTableListItem } from './components/HotTagsCard/data.d';
-import { TableListItem as ArticleHitTableListItem } from './components/ArticleHitCard/data.d';
-import { TableListItem as WorksHitTableListItem } from './components/WorksHitCard/data.d';
+import { TableListItem as HotSearchTableListItem } from './_component/HotSearchCard/data.d';
+import { TableListItem as HotTagsTableListItem } from './_component/HotTagsCard/data.d';
+import { TableListItem as ArticleHitTableListItem } from './_component/ArticleHitCard/data.d';
+import { TableListItem as WorksHitTableListItem } from './_component/WorksHitCard/data.d';
 
 export interface ChartDataType {
   day: string[];
