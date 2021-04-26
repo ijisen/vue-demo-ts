@@ -6,8 +6,7 @@ mock[`POST ${VUE_APP_API_HOST || ''}/uploads`] = (req, res) => {
     code: 0,
     data: {
       id: 1,
-      url:
-        'http://uploads.liqingsong.cc/20200531/583057e8-8bab-4eee-b5a0-bec915089c0c.jpg',
+      url: '#',
       name: 'xcx.jpg',
     },
     msg: '',

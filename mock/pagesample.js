@@ -66,9 +66,9 @@ mock[`GET ${VUE_APP_API_HOST || ''}/pages/list`] = (req, res) => {
       'list|10': [
         {
           id: '@integer(1)',
-          'name|1': ['个人博客', '网页小功能'],
-          'desc|1': ['李庆松的个人博客', '原创定制最好的网页插件小功能'],
-          'href|1': ['http://liqingsong.cc', 'http://wyxgn.com'],
+          'name|1': ['名称', '名称'],
+          'desc|1': ['名称', '名称'],
+          'href|1': ['#', '#'],
           'type|1': ['header', 'footer'],
         },
       ],
@@ -102,9 +102,9 @@ mock[`GET ${VUE_APP_API_HOST || ''}/pages/list/*`] = (req, res) => {
     code: 0,
     data: mockjs.mock({
       id: '@integer(1)',
-      'name|1': ['个人博客', '网页小功能'],
-      'desc|1': ['李庆松的个人博客', '原创定制最好的网页插件小功能'],
-      'href|1': ['http://liqingsong.cc', 'http://wyxgn.com'],
+      'name|1': ['名称', '名称'],
+      'desc|1': ['名称', '名称'],
+      'href|1': ['#', '#'],
       'type|1': ['header', 'footer'],
     }),
   });
